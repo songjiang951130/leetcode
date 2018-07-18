@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Stack;
 
 public class Main {
     /***
@@ -115,5 +116,40 @@ public class Main {
             node=node.next;
         }
         return fakeHead.next;
+    }
+
+    /**
+     *
+     * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+     *
+     * An input string is valid if:
+     *
+     * 1、Open brackets must be closed by the same type of brackets.
+     * 2、Open brackets must be closed in the correct order.
+     * @link https://leetcode.com/problems/valid-parentheses/description/
+     * @param s
+     * @return boolean
+     */
+    public boolean isValid(String s) {
+        char[] array = s.toCharArray();
+        Stack<Character> stack = new Stack();
+        for(char c : array ){
+            boolean checkResult = this.check(stack,c);
+            if(checkResult){
+                stack.pop();
+            }else{
+                stack.push(c);
+            }
+        }
+        return stack.size()==0?true:false;
+    }
+
+    public  boolean check(Stack<Character> stack ,char c){
+        if(stack.size() == 0) return false;
+        char temp = stack.peek();
+        if((temp == '['&&c==']')||(temp=='{'&&c=='}')||(temp=='('&&c==')')){
+            return true;
+        }
+        return false;
     }
 }
