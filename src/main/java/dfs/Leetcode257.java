@@ -13,6 +13,7 @@ public class Leetcode257 {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> list = new ArrayList<String>();
         path(list, "", root);
+
         return list;
     }
 

@@ -7,6 +7,6 @@ MainTest中会有测试用例运行Main中方法
 #### 刷题进度：
 57/861
 
-### [深度遍历](/src/java/dfs)
+### [深度遍历](/src/main/java/dfs)
 leetcode 257 查找二次树所有子路径
 
