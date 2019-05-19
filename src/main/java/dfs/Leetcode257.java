@@ -13,12 +13,11 @@ public class Leetcode257 {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> list = new ArrayList<String>();
         path(list, "", root);
-
         return list;
     }
 
     public List<String> path(List<String> list, String result, TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return null;
         }
         result += "->" + root.val;
@@ -33,3 +32,4 @@ public class Leetcode257 {
         path(list, result, root.left);
         return list;
     }
+}
