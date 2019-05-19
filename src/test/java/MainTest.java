@@ -2,7 +2,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
 public class MainTest {
     @Test
     public void testisPalindrome() {
@@ -23,15 +22,15 @@ public class MainTest {
         assertEquals(main.romanToInt("MCMXCIV"), 1994);
     }
 
-    //longestCommonPrefix
+    // longestCommonPrefix
     @Test
     public void testlongestCommonPrefix() {
         Main main = new Main();
-        String[] array1 = {"flower", "flow", "flight"};
-        String[] array2 = {"dog", "race", "car"};
-        String[] array3 = {"aa", "a"};
-        String[] array4 = {"a", "ac"};
-        String[] array5 = {"a"};
+        String[] array1 = { "flower", "flow", "flight" };
+        String[] array2 = { "dog", "race", "car" };
+        String[] array3 = { "aa", "a" };
+        String[] array4 = { "a", "ac" };
+        String[] array5 = { "a" };
 
         assertEquals(main.longestCommonPrefix(array1), "fl");
         assertEquals(main.longestCommonPrefix(array2), "");
@@ -45,6 +44,10 @@ public class MainTest {
         Main main = new Main();
         String str = "   a   b ";
         assertEquals(main.reverseWords(str), "b a");
+
+    }
+
+    public void testBuild() {
 
     }
 

@@ -4,6 +4,7 @@ import java.util.Stack;
 public class Main {
     /***
      * 回文
+     * 
      * @param x int
      * @return boolean
      */
@@ -43,12 +44,14 @@ public class Main {
     }
 
     public String longestCommonPrefix(String[] strs) {
-        if (strs.length == 0) return ""; //空数组
-        if (strs[0].length() == 0) return ""; //空字符串
+        if (strs.length == 0)
+            return ""; // 空数组
+        if (strs[0].length() == 0)
+            return ""; // 空字符串
         char[] array = strs[0].toCharArray();
         int index = 0;
         boolean common = false;
-        for (int i = 0; i < strs.length && index < strs[i].length() && index < array.length; i++) { //index 要小于每个字符串的长度
+        for (int i = 0; i < strs.length && index < strs[i].length() && index < array.length; i++) { // index 要小于每个字符串的长度
             if (array[index] == strs[i].charAt(index)) {
                 common = true;
             } else {
@@ -74,12 +77,14 @@ public class Main {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head.next == null && n == 1) return null;
+        if (head.next == null && n == 1)
+            return null;
         ListNode nodeN = head;
         for (int i = 0; i < n; i++) {
             nodeN = nodeN.next;
         }
-        if (nodeN == null) return head = head.next;  //头节点问题
+        if (nodeN == null)
+            return head = head.next; // 头节点问题
         ListNode temp = head;
         ListNode nodeNPre = head;
         while (nodeN != null) {
@@ -106,26 +111,28 @@ public class Main {
         ListNode fakeHead = new ListNode(-1);
         fakeHead.next = head;
         ListNode pre = fakeHead;
-        ListNode node =head;
-        while(node!=null){
-            if(node.val == val){
-                pre.next =pre.next.next;
-            }else{
+        ListNode node = head;
+        while (node != null) {
+            if (node.val == val) {
+                pre.next = pre.next.next;
+            } else {
                 pre = node;
             }
-            node=node.next;
+            node = node.next;
         }
         return fakeHead.next;
     }
 
     /**
      *
-     * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+     * Given a string containing just the characters '(', ')', '{', '}', '[' and
+     * ']', determine if the input string is valid.
      *
      * An input string is valid if:
      *
-     * 1、Open brackets must be closed by the same type of brackets.
-     * 2、Open brackets must be closed in the correct order.
+     * 1、Open brackets must be closed by the same type of brackets. 2、Open brackets
+     * must be closed in the correct order.
+     * 
      * @link https://leetcode.com/problems/valid-parentheses/description/
      * @param s
      * @return boolean
@@ -133,23 +140,28 @@ public class Main {
     public boolean isValid(String s) {
         char[] array = s.toCharArray();
         Stack<Character> stack = new Stack();
-        for(char c : array ){
-            boolean checkResult = this.check(stack,c);
-            if(checkResult){
+        for (char c : array) {
+            boolean checkResult = this.check(stack, c);
+            if (checkResult) {
                 stack.pop();
-            }else{
+            } else {
                 stack.push(c);
             }
         }
-        return stack.size()==0?true:false;
+        return stack.size() == 0 ? true : false;
     }
 
-    public  boolean check(Stack<Character> stack ,char c){
-        if(stack.size() == 0) return false;
+    public boolean check(Stack<Character> stack, char c) {
+        if (stack.size() == 0)
+            return false;
         char temp = stack.peek();
-        if((temp == '['&&c==']')||(temp=='{'&&c=='}')||(temp=='('&&c==')')){
+        if ((temp == '[' && c == ']') || (temp == '{' && c == '}') || (temp == '(' && c == ')')) {
             return true;
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        TreeNode node = new TreeNode(11);
     }
 }
