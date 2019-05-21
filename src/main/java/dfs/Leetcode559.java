@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Leetcode559 {
+    /**
+     * @link https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+     * @param root
+     * @return
+     */
     public int maxDepth(Node root) {
         return getDepth(root, 0);
     }
