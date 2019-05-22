@@ -17,21 +17,20 @@ public class Leetcode559 {
         if (root == null) {
             return 0;
         }
-        if (root.children.size() == 0) {
-            return 1;
+        depth = depth + 1;
+        if (root.children == null || root.children.size() == 0) {
+            return depth;
         }
-        int max = 0;
+
+        int max = depth;
         for (int index = 0; index < root.children.size(); index++) {
-            int temp = getDepth(root.children.get(index), depth + 1);
+            int temp = getDepth(root.children.get(index), depth);
             max = temp > max ? temp : max;
         }
         return max;
     }
 
     public static void main(String[] args) {
-        Node root = new Node();
-        root.val = 1;
-
         Node root4 = new Node();
         root4.val = 4;
         Node root2 = new Node();
@@ -45,7 +44,15 @@ public class Leetcode559 {
         list.add(root5);
         list.add(root6);
         Node root3 = new Node(3, list);
-        root.val = 1;
+
+        List<Node> list2 = new ArrayList<Node>();
+        list2.add(root3);
+        list2.add(root4);
+        list2.add(root2);
+
+        Node root = new Node(1, list2);
+        Leetcode559 leet = new Leetcode559();
+        System.out.println(leet.maxDepth(root));
 
     }
 }

@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Leetcode559",
+            "request": "launch",
+            "mainClass": "dfs.Leetcode559",
+            "projectName": "leetcode"
+        }
+    ]
+}

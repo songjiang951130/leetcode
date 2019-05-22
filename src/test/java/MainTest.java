@@ -4,14 +4,6 @@ import static org.junit.Assert.*;
 
 public class MainTest {
     @Test
-    public void testisPalindrome() {
-        Main main = new Main();
-        assertTrue(main.isPalindrome(121));
-        assertFalse(main.isPalindrome(-121));
-        assertTrue(main.isPalindrome(10));
-    }
-
-    @Test
     public void testRomentoInt() {
         Main main = new Main();
         assertEquals(main.romanToInt("III"), 3);
@@ -44,10 +36,6 @@ public class MainTest {
         Main main = new Main();
         String str = "   a   b ";
         assertEquals(main.reverseWords(str), "b a");
-
-    }
-
-    public void testBuild() {
 
     }
 

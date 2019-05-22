@@ -139,7 +139,7 @@ public class Main {
      */
     public boolean isValid(String s) {
         char[] array = s.toCharArray();
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<Character>();
         for (char c : array) {
             boolean checkResult = this.check(stack, c);
             if (checkResult) {
@@ -159,9 +159,5 @@ public class Main {
             return true;
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        TreeNode node = new TreeNode(11);
     }
 }
