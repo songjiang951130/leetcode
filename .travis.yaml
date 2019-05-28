@@ -2,3 +2,9 @@ language: java
 
 git:
   depth: false
+
+notifications:
+  slack:
+    on_success: always
+  email:
+      - 983804576@qq.com
