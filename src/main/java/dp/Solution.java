@@ -44,4 +44,24 @@ public class Solution {
         return res[n];
     }
 
+    /**
+     * 斐波那契数列
+     *
+     * @param n
+     * @return
+     */
+    public int fib(int n) {
+        //f2 = f1 + f0 = 1 + 0
+        if (n == 0) {
+            return 0;
+        }
+        int[] res = new int[n + 1];
+        res[0] = 0;
+        res[1] = 1;
+        for (int i = 2; i < res.length; i++) {
+            res[i] = res[i - 1] + res[i - 2];
+        }
+        return res[n];
+    }
+
 }
