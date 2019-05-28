@@ -16,18 +16,10 @@ public class SolutionTest {
         int[] array ={-2,1,-3,4,-1,2,1,-5,4};
         assertEquals(6,solution.maxSubArray(array));
     }
-
-//    @Test
-//    public void testCase2() {
-//        Leetcode1021 code = new Leetcode1021();
-//        String s = "(()())(())";
-//        assertEquals("()()()", code.removeOuterParentheses(s));
-//    }
-//
-//    @Test
-//    public void testCase3() {
-//        Leetcode1021 code = new Leetcode1021();
-//        String  s = "(()())(())(()(()))";
-//        assertEquals("()()()()(())", code.removeOuterParentheses(s));
-//    }
+    @Test
+    public void testClimbStairs() {
+        assertEquals(1,solution.climbStairs(1));
+        assertEquals(2,solution.climbStairs(2));
+        assertEquals(3,solution.climbStairs(3));
+    }
 }

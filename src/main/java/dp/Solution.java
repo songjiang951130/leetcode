@@ -26,5 +26,22 @@ public class Solution {
         return max;
     }
 
+    /**
+     * 爬楼梯 上一步或者两步，有多少种可能
+     * 思路：n步楼梯等于 n-1步可能数加上 n-2的可能数
+     * climbStairs(n) =climbStairs(n-1) + climbStairs(n-2)
+     *
+     * @param n
+     * @return
+     */
+    public int climbStairs(int n) {
+        int[] res = new int[n + 1];
+        res[0] = 1;
+        res[1] = 1;
+        for (int i = 2; i < res.length; i++) {
+            res[i] = res[i - 1] + res[i - 2];
+        }
+        return res[n];
+    }
 
 }
