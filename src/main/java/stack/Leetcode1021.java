@@ -1,13 +1,12 @@
 package stack;
 
-import java.util.Stack;
-
 public class Leetcode1021 {
 
     /**
      * 移除最外层的 ()
      * 思路 计算 左括号 和 右括号数 相等时，即可去除最外层的括号
      *
+     * @link https://leetcode.com/problems/remove-outermost-parentheses
      * @param S
      * @return
      */
