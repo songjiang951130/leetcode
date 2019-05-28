@@ -1,5 +1,12 @@
 # leetcode
 leetcode 刷题笔记
+
+<p align="center">
+
+[![Build Status](https://travis-ci.org/songjiang951130/leetcode.svg?branch=master)](https://travis-ci.org/songjiang951130/leetcode)
+
+</p>
+
 #### 介绍
 [代码文件夹](/src/main/java)
 [测试文件夹](/src/test/java)
