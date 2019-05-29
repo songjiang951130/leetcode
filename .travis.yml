@@ -12,3 +12,13 @@ notifications:
     on_success: always
   email:
       - 983804576@qq.com
+branches:
+  #只构建的分支
+  only:
+    - master
+    - stable
+    - develop
+
+#代码覆盖
+after_success:
+  - codecov
