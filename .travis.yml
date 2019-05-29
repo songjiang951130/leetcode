@@ -8,10 +8,9 @@ git:
   depth: false
 
 notifications:
-  slack:
-    on_success: always
   email:
       - 983804576@qq.com
+    on_failure: always
 branches:
   #只构建的分支
   only:
