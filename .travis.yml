@@ -16,7 +16,6 @@ git:
 notifications:
   email:
       - 983804576@qq.com
-    on_failure: always
 
 after_success:
   - codecov
