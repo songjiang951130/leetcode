@@ -1,10 +1,10 @@
 language: java
 
-script: "mvn cobertura:cobertura"
+#script: "mvn cobertura:cobertura"
 
-#代码覆盖
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41
+##代码覆盖
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41
 
 jdk:
   - oraclejdk8
@@ -17,3 +17,6 @@ notifications:
   email:
       - 983804576@qq.com
     on_failure: always
+
+after_success:
+  - codecov
