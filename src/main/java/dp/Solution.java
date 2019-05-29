@@ -46,9 +46,10 @@ public class Solution {
 
     /**
      * 斐波那契数列
-     * @link https://leetcode.com/problems/fibonacci-number
+     *
      * @param n
      * @return
+     * @link https://leetcode.com/problems/fibonacci-number
      */
     public int fib(int n) {
         //f2 = f1 + f0 = 1 + 0
@@ -62,6 +63,34 @@ public class Solution {
             res[i] = res[i - 1] + res[i - 2];
         }
         return res[n];
+    }
+
+    /**
+     * 最大利润
+     */
+    public int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+        int max = 0;
+        int current = 0;
+        for (int i = 1; i < prices.length; i++) {
+            current = (prices[i] - prices[i - 1]) > 0 ? (prices[i] - prices[i - 1]) : 0;
+            max = current > max ? current : max;
+        }
+        return max;
+    }
+
+    public int maxProfitForce(int[] prices) {
+        int max = 0;
+        for (int i = 0; i < prices.length; i++) {
+            int tmp = 0;
+            for (int j = i + 1; j < prices.length; j++) {
+                tmp = prices[j] - prices[i];
+                max = max > tmp ? max : tmp;
+            }
+        }
+        return max;
     }
 
 }
