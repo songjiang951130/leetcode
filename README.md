@@ -1,10 +1,10 @@
-# leetcode
-leetcode 刷题笔记
+# leetcode 刷题笔记
 
 <p align="center">
 
 [![Build Status](https://travis-ci.org/songjiang951130/leetcode.svg?branch=master)](https://travis-ci.org/songjiang951130/leetcode)
 [![Code coverage status](https://img.shields.io/codecov/c/github/songjiang951130/leetcode.svg?style=flat-square)](http://codecov.io/github/songjiang951130/leetcode)
+
 </p>
 
 #### 介绍
