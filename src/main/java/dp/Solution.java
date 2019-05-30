@@ -85,7 +85,7 @@ public class Solution {
         int max = 0;
         int current = 0;
         for (int i = 1; i < prices.length; i++) {
-            current += (prices[i] - prices[i - 1]) > 0 ? (prices[i] - prices[i - 1]) : 0;
+            current = (current + prices[i] - prices[i - 1]) > 0 ? (current + prices[i] - prices[i - 1]) : 0;
             max = current > max ? current : max;
         }
         return max;

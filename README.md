@@ -40,4 +40,11 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 
 
 
+相关查看
+
+[codecov](https://codecov.io/gh/songjiang951130/leetcode)
+
+[build](https://travis-ci.org/songjiang951130/leetcode)
+
+
 
