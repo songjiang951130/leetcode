@@ -15,6 +15,8 @@ public class SolutionTest {
     public void testCase1() {
         int[] array = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         assertEquals(6, solution.maxSubArray(array));
+        assertEquals(6, solution.maxSubArrayByForce(array));
+        assertEquals(6, solution.maxSubArrayLowMemory(array));
     }
 
     @Test

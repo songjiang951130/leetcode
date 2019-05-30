@@ -13,8 +13,18 @@ public class Solution {
         return max;
     }
 
+    public int maxSubArrayLowMemory(int[] nums) {
+        int max = nums[0];
+        int tmp = nums[0];
+        for (int index = 1; index < nums.length; index++) {
+            tmp = nums[index] + (tmp > 0 ? tmp : 0);
+            max = tmp > max ? tmp : max;
+        }
+        return max;
+    }
+
     //暴力求解最大子数组
-    public int maxSubArray2(int[] nums) {
+    public int maxSubArrayByForce(int[] nums) {
         int max = nums[0];
         for (int i = 0; i < nums.length; i++) {
             int temp = 0;
@@ -75,7 +85,7 @@ public class Solution {
         int max = 0;
         int current = 0;
         for (int i = 1; i < prices.length; i++) {
-            current = (prices[i] - prices[i - 1]) > 0 ? (prices[i] - prices[i - 1]) : 0;
+            current += (prices[i] - prices[i - 1]) > 0 ? (prices[i] - prices[i - 1]) : 0;
             max = current > max ? current : max;
         }
         return max;
