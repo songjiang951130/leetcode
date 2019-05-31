@@ -110,6 +110,7 @@ public class Solution {
      * @return
      */
     public boolean stoneGame(int[] piles) {
+        return true;
 //        int sum1 = 0;
 //        int sum2 = 0;
 //        int start = 0, end = piles.length - 1;
