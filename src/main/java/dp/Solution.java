@@ -103,4 +103,7 @@ public class Solution {
         return max;
     }
 
+    public boolean stoneGame(int[] piles){
+        return false;
+    }
 }

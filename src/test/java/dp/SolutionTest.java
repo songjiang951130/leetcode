@@ -61,4 +61,10 @@ public class SolutionTest {
         int[] case4 = {};
         assertEquals(0, solution.maxProfitForce(case4));
     }
+
+    @Test
+    public void testStoneGame(){
+        int[] case1 = {5,3,4,5};
+        assertEquals(true,solution.stoneGame(case1));
+    }
 }
