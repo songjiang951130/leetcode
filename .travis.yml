@@ -2,10 +2,13 @@ language: java
 
 install: true
 
+#不能用自定义测试，不然测试不通过也会显示build成功
 #script: "mvn cobertura:cobertura"
 
 #代码覆盖
-after_success:
+after_build:
+  - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41
+after_failure:
   - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41
 
 jdk:
