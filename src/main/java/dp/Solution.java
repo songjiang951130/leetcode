@@ -103,7 +103,47 @@ public class Solution {
         return max;
     }
 
-    public boolean stoneGame(int[] piles){
-        return false;
+    /**
+     * 有毒啊，有点像博弈之中先手必赢（五子棋）
+     * @link https://leetcode.com/problems/stone-game
+     * @param piles
+     * @return
+     */
+    public boolean stoneGame(int[] piles) {
+//        int sum1 = 0;
+//        int sum2 = 0;
+//        int start = 0, end = piles.length - 1;
+//        int times = 0;
+//        while (start <= end) {
+//            //仅剩最后两个数
+//            if (end - start <= 1) {
+//                sum1 += Integer.max(piles[start], piles[end]);
+//                sum2 += Integer.min(piles[start], piles[end]);
+//                System.out.println(sum1 + " " + sum2);
+//                break;
+//            }
+//            if (piles[start] + piles[end] > piles[start + 1] + piles[end - 1]) {
+//                if (times % 2 == 1) {
+//                    sum2 += piles[start];
+//                } else {
+//                    sum1 += piles[start];
+//                }
+//                start++;
+//            } else if (piles[end] + piles[start] < piles[end - 1] + piles[start + 1]){
+//
+//            }else {
+//                if (times % 2 == 1) {
+//                    sum2 += piles[end];
+//                } else {
+//                    sum1 += piles[end];
+//                }
+//                end--;
+//            }
+//            if(times % 2 == 1){
+//                System.out.println(sum1 + " " + sum2);
+//            }
+//            times++;
+//        }
+//        return sum1 > sum2;
     }
 }
