@@ -15,6 +15,6 @@ git:
 
 notifications:
   email:
-      - 983804576@qq.com
+    - 983804576@qq.com
   on_success: always  #never
   on_failure: always
