@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class Leetcode771 {
     public int numJewelsInStones(String J, String S) {
+        //此处应该用set，而不是map
         Set<Character> set = new HashSet<>();
         for (char c : J.toCharArray()) {
             set.add(c);
