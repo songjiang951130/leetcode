@@ -1,0 +1,22 @@
+package dp;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class EasyDpTest {
+    @Test
+    public void rob()
+    {
+        int[] nums = {1,2,3,1};
+        EasyDp easyDp = new EasyDp();
+        assertEquals(4,easyDp.rob(nums));
+        int[] nums2 = {2,7,9,3,1};
+        assertEquals(12,easyDp.rob(nums2));
+        int[] nums3 = {2,1,1,2};
+        assertEquals(4,easyDp.rob(nums3));
+
+
+
+    }
+}
