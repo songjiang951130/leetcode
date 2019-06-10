@@ -30,10 +30,10 @@ public class RobType {
     }
 
     public int rob(int[] nums, int start, int end) {
-        int[] dp = new int[end - start+1];
+        int[] dp = new int[end - start + 1];
         dp[start] = nums[start];
         dp[start + 1] = Math.max(nums[start], nums[start + 1]);
-        for (int i = start+2; i < end; i++) {
+        for (int i = start + 2; i < end; i++) {
             dp[i] = Math.max(dp[i - 1], nums[i] + dp[i - 2]);
         }
         return dp[end - 1];
