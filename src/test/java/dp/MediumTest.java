@@ -15,5 +15,9 @@ public class MediumTest {
         };
         PathSum pathSum = new PathSum();
         assertEquals(12, pathSum.minFallingPathSum(a));
+        int[][] a2 = {
+                {69}
+        };
+        assertEquals(69, pathSum.minFallingPathSum(a2));
     }
 }
