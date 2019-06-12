@@ -7,6 +7,8 @@ public class ArithmeticSlice {
      * 计算公式
      * len 为等差数列长度
      * sum = (len-1) *(len -2)/2
+     * @result Runtime: 2 ms, faster than 10.22% of Java online submissions for Arithmetic Slices.
+     * Memory Usage: 36.9 MB, less than 99.19% of Java online submissions for Arithmetic Slices.
      *
      * @param A
      * @return
