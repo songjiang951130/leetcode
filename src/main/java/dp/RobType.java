@@ -1,6 +1,6 @@
 package dp;
 
-public class EasyDp {
+public class RobType {
 
     //1,2,3,1
 
