@@ -28,7 +28,7 @@ public class UniqPath {
         int[][] array = new int[obstacleGrid.length][obstacleGrid[0].length];
         for (int i = 0; i < obstacleGrid.length; i++) {
             for (int j = 0; j < obstacleGrid[i].length; j++) {
-                if (obstacleGrid[i][j] != 1) {
+                if (obstacleGrid[i][j] == 0) {
                     if (i == 0 && j == 0) {
                         array[i][j] = 1;
                         continue;
@@ -53,7 +53,6 @@ public class UniqPath {
                     }
                     array[i][j] = left + right;
                 }
-
             }
         }
         return array[obstacleGrid.length - 1][obstacleGrid[0].length - 1];
