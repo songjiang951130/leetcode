@@ -16,7 +16,6 @@ public class EasyDpTest {
         assertEquals(4, easyDp.rob(nums3));
         int[] nums4 = {};
         assertEquals(0, easyDp.rob(nums4));
-
     }
 
     @Test
