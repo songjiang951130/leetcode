@@ -34,17 +34,27 @@
                         <format>html</format>
                         <format>xml</format>
                     </formats>
-                    <check />
+                    <check>
+                        <haltOnFailure>true</haltOnFailure>
+<!--                        <branchRate>75</branchRate>-->
+<!--                        <lineRate>85</lineRate>-->
+<!--                        <totalBranchRate>75</totalBranchRate>-->
+<!--                        <totalLineRate>85</totalLineRate>-->
+<!--                        <packageLineRate>75</packageLineRate>-->
+<!--                        <packageBranchRate>85</packageBranchRate>-->
+                    </check>
                 </configuration>
                 <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>cobertura</goal>
-                        </goals>
-                    </execution>
+<!--                    <execution>-->
+<!--                        <phase>test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
                 </executions>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
