@@ -1,15 +1,13 @@
 language: java
 
-#不能用自定义测试，不然测试不通过也会显示build成功
-script: "mvn cobertura:cobertura"
+script:
+  - mvn test -B #此命令在测试不通过时会返回错误码 1
 
-#代码覆盖
-after_build:
-#  - mvn cobertura:cobertura
-  - bash <(curl -s https://codecov.io/bash)
+after_success:
+  - mvn cobertura:cobertura #此命令在测试不通过时会返回错误码 0
+  - bash <(curl -s https://codecov.io/bash) #代码覆盖
 
 jdk:
-#  - oraclejdk8
   - openjdk8
 
 git:
