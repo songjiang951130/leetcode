@@ -3,8 +3,6 @@ package water;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Leetcode766Test {
     private Leetcode766 leetcode;
 
