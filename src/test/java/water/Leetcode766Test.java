@@ -20,5 +20,14 @@ public class Leetcode766Test {
                 15, 0, 36, 59, 71, 15, 26
         }};
         Assert.assertFalse(leetcode.isToeplitzMatrix(case1));
+
+        int[][] case2 = {{
+                36, 59, 71
+        }, {
+                56, 36, 59
+        }, {
+                15, 56, 36,
+        }};
+        Assert.assertFalse(leetcode.isToeplitzMatrix(case2));
     }
 }
