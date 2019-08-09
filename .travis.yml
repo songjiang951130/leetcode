@@ -1,10 +1,10 @@
 language: java
 
 script:
-  - mvn cobertura:cobertura
+  - mvn test -B
 
 after_success:
-#  - mvn cobertura:cobertura #此命令在测试不通过时会返回错误码 0
+  - mvn cobertura:cobertura #此命令 会运行测试 在测试失败时会返回错误码 0，继续生成测试报告
   - bash <(curl -s https://codecov.io/bash) #代码覆盖
 
 jdk:
