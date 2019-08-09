@@ -12,8 +12,8 @@ after_failure:
   - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41
 
 jdk:
-  - oraclejdk8
-#  - openjdk8
+#  - oraclejdk8
+  - openjdk8
 
 git:
   depth: false
