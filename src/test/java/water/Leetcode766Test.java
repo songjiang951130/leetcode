@@ -28,6 +28,6 @@ public class Leetcode766Test {
         }, {
                 15, 56, 36,
         }};
-        Assert.assertTrue(leetcode.isToeplitzMatrix(case2));
+        Assert.assertFalse(leetcode.isToeplitzMatrix(case2));
     }
 }
