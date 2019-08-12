@@ -16,7 +16,7 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 #### 刷题进度：
 71/1051
 
-### [深度遍历](/src/main/java/dfs)
+### [深度遍历](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.dfs)
 
 | leetcode 编号 |问题内容      | 难度  | 
 |:----------|:-------------|:---|
@@ -24,13 +24,13 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 | 100 |  是否存在跟节点到子节点路径等于给定值   |  |
 
 
-### [栈stack](/src/main/java/stack)
+### [栈stack](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.stack)
 
 | leetcode 编号 |问题内容      | 难度| 
 |:----------|:-------------|:---|
 | 1021 |  去除最外层括号 | |
 
-### [动态规划](/src/main/java/dp)
+### [动态规划](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.dp)
 
 | leetcode 编号 |问题内容      | 难度|
 |:----------|:-------------|:----|

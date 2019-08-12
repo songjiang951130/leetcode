@@ -1,5 +1,5 @@
 import org.junit.Test;
-import stack.Leetcode1021;
+import com.github.songjiang951130.leetcode.stack.Leetcode1021;
 
 import static org.junit.Assert.assertEquals;
 
