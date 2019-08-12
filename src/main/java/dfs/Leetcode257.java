@@ -1,7 +1,9 @@
 package dfs;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import database.TreeNode;
 
@@ -16,7 +18,7 @@ public class Leetcode257 {
         return list;
     }
 
-    public List<String> path(List<String> list, String result, TreeNode root) {
+    private List<String> path(List<String> list, String result, TreeNode root) {
         if (root == null) {
             return null;
         }
