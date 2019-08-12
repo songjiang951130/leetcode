@@ -30,8 +30,8 @@ public class Leetcode257 {
             }
             return list;
         }
-        path(list, result, root.right);
         path(list, result, root.left);
+        path(list, result, root.right);
         return list;
     }
 }

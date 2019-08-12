@@ -21,8 +21,8 @@ public class Leetcode257Test {
         TreeNode root = Main.stringToTreeNode("[1,2,3,null,5]");
         List<String> list = leetcode.binaryTreePaths(root);
         List<String> result = new ArrayList<>();
-        result.add("1->3");
         result.add("1->2->5");
+        result.add("1->3");
         for (int i = 0;i<list.size();i++){
             Assert.assertEquals(result.get(i),list.get(i));
         }

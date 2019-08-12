@@ -25,7 +25,7 @@ public class Leetcode1021 {
             }
 
             if (left == right) {
-                sb.append(S.substring(i - left * 2 + 2, i));
+                sb.append(S, i - left * 2 + 2, i);
                 left = 0;
                 right = 0;
             }
