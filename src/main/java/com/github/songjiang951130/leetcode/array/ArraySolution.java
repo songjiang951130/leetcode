@@ -1,10 +1,14 @@
 package com.github.songjiang951130.leetcode.array;
 
+import com.github.songjiang951130.ioc.core.annotation.Autowired;
 import com.github.songjiang951130.ioc.core.annotation.Component;
 
 @SuppressWarnings("unchecked")
 @Component
 public class ArraySolution {
+    @Autowired
+    private String testField;
+
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int i = 0, j = 0;
         int index = 0;
@@ -19,5 +23,13 @@ public class ArraySolution {
             index++;
         }
         return isOdd ? Math.min(nums1[i], nums2[j]) : (nums1[i] + nums2[j]) / 2.0;
+    }
+
+    public String getTestField() {
+        return testField;
+    }
+
+    public void setTestField(String testField) {
+        this.testField = testField;
     }
 }
