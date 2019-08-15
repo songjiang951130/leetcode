@@ -16,7 +16,7 @@ import java.util.*;
 
 public class Container {
     //存储实例化的bean
-    private static Map<String, Object> beanMap = new HashMap<>();
+    private static Map<String, Object> beanMap = new HashMap<String, Object>();
 
 
     /**
@@ -55,11 +55,14 @@ public class Container {
      * @param packageName 类报名
      */
     private void scanPackage(String path, String packageName) {
-        File[] fileList = new File(path).listFiles(pathName -> {
-            if (pathName.isDirectory()) {
-                return true;
+        File[] fileList = new File(path).listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathName) {
+                if (pathName.isDirectory()) {
+                    return true;
+                }
+                return pathName.getName().endsWith(".class");
             }
-            return pathName.getName().endsWith(".class");
         });
         if (fileList == null) {
             return;
@@ -94,24 +97,30 @@ public class Container {
                     for (Field field : fields) {
                         field.setAccessible(true);
                         System.out.println("field:" + field);
-                        System.out.println("设置field 000"+field.isAnnotationPresent(Autowired.class));
+                        System.out.println("设置field 000" + field.isAnnotationPresent(Autowired.class));
                         if (field.isAnnotationPresent(Autowired.class)) {
-                            System.out.println("设置field 1111"+" "+field.getType().getClass().toString());
+                            System.out.println("设置field 1111" + " " + field.getType().getClass().toString());
 //                            if(field.getType().getClass().equals("class java.lang.Class")){
-                                System.out.println("设置field 2222");
-                                field.set(object, "hello world");
+                            System.out.println("设置field 2222");
+                            field.set(object, "hello world");
 //                            }
                         }
                     }
-                    System.out.println("field over"+((ArraySolution)object).getTestField());
+                    System.out.println("field over" + ((ArraySolution) object).getTestField());
                     //java 9 不推荐用了
 
                     beanMap.put(targetClass.getName(), object);
                     System.out.println(beanMap);
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+
         }
 
     }

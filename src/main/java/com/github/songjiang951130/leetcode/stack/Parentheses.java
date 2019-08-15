@@ -8,7 +8,7 @@ public class Parentheses {
      * https://leetcode.com/problems/generate-parentheses/
      */
     public List<String> generateParenthesis(int n) {
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         backTrace(list, "", n, 0, 0);
         return list;
     }

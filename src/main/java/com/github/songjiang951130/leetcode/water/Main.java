@@ -17,7 +17,7 @@ public class Main {
         String[] parts = input.split(",");
         String item = parts[0];
         TreeNode root = new TreeNode(Integer.parseInt(item));
-        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        Queue<TreeNode> nodeQueue = new LinkedList<TreeNode>();
         nodeQueue.add(root);
 
         int index = 1;

@@ -13,7 +13,7 @@ public class ParenthesesTest {
     public void generateParenthesis() {
         Parentheses parentheses = new Parentheses();
         int case1 = 3;
-        List<String> list1 = new ArrayList<>();
+        List<String> list1 = new ArrayList<String>();
         list1.add("((()))");
         list1.add("(()())");
         list1.add("(())()");

@@ -1,3 +1,5 @@
+package com.github.songjiang951130.leetcode;
+
 import org.junit.Test;
 import com.github.songjiang951130.leetcode.stack.Leetcode1021;
 
