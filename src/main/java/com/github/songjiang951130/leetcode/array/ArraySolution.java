@@ -9,6 +9,9 @@ public class ArraySolution {
     @Autowired
     private String testField;
 
+    @Autowired
+    public Object object;
+
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int i = 0, j = 0;
         int index = 0;
@@ -27,9 +30,5 @@ public class ArraySolution {
 
     public String getTestField() {
         return testField;
-    }
-
-    public void setTestField(String testField) {
-        this.testField = testField;
     }
 }

@@ -12,12 +12,13 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring</artifactId>
-            <version>1.0</version>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.9.4</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -48,25 +49,9 @@
                     </formats>
                     <check>
                         <haltOnFailure>true</haltOnFailure>
-<!--                        <branchRate>75</branchRate>-->
-<!--                        <lineRate>85</lineRate>-->
-<!--                        <totalBranchRate>75</totalBranchRate>-->
-<!--                        <totalLineRate>85</totalLineRate>-->
-<!--                        <packageLineRate>75</packageLineRate>-->
-<!--                        <packageBranchRate>85</packageBranchRate>-->
                     </check>
                 </configuration>
-                <executions>
-<!--                    <execution>-->
-<!--                        <phase>test</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>check</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-                </executions>
             </plugin>
-
-
         </plugins>
     </build>
 </project>

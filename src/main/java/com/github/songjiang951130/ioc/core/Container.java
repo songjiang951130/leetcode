@@ -1,5 +1,6 @@
 package com.github.songjiang951130.ioc.core;
 
+import com.github.songjiang951130.ioc.core.annotation.Autowired;
 import com.github.songjiang951130.ioc.core.annotation.Component;
 import com.github.songjiang951130.ioc.core.utils.Assert;
 import com.github.songjiang951130.leetcode.array.ArraySolution;
@@ -8,6 +9,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
@@ -18,23 +20,11 @@ public class Container {
 
 
     /**
-     * 参考博客：https://www.cnblogs.com/youdiaodaxue16/p/9813087.html
+     * 参考博客：
+     * https://www.cnblogs.com/youdiaodaxue16/p/9813087.html
+     * https://www.cnblogs.com/javaLin/p/8341388.html
      * spring 源码
      */
-    public void handle() {
-        String className = "com.github.songjiang951130.leetcode.array.ArraySolution";
-        try {
-            Class<?> classTest = Class.forName(className);
-            if (classTest.isAnnotation()) {
-                List list = Arrays.asList(classTest.getAnnotatedInterfaces());
-                System.out.println("hello");
-                System.out.println(list);
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void scan(Class<?> primarySource) {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         Assert.notNull(primarySource, "PrimarySources must not be null");
@@ -60,6 +50,10 @@ public class Container {
         new Container().scan(primarySource);
     }
 
+    /**
+     * @param path        文件绝对路径
+     * @param packageName 类报名
+     */
     private void scanPackage(String path, String packageName) {
         File[] fileList = new File(path).listFiles(pathName -> {
             if (pathName.isDirectory()) {
@@ -80,22 +74,46 @@ public class Container {
                 String fileName = file.getName().replace(".class", "");
 
                 String className = packageName + "." + fileName;
-                try {
-                    Class targetClass = Class.forName(className);
-                    if (targetClass.isAnnotationPresent(Component.class)) {
-                        for (Annotation annotation : targetClass.getAnnotations()) {
-                            System.out.println("注解 type:" + annotation.annotationType().toString() + " " + targetClass.getName());
-                            //java 9 不推荐用了
-                            Object object = targetClass.newInstance();
-                            beanMap.put(targetClass.getName(), object);
-                            System.out.println(beanMap);
-                        }
-                    }
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
+                handleClassFile(className);
+
             }
         }
+    }
+
+    public void handleClassFile(String name) {
+        try {
+            Class targetClass = Class.forName(name);
+            if (targetClass.isAnnotationPresent(Component.class)) {
+                for (Annotation annotation : targetClass.getAnnotations()) {
+                    Object object = targetClass.newInstance();
+                    System.out.println("注解 type:" + annotation.annotationType().toString() + " " + targetClass.getName());
+                    Field[] fields = targetClass.getDeclaredFields();
+
+                    System.out.println("length:" + fields.length);
+
+                    for (Field field : fields) {
+                        field.setAccessible(true);
+                        System.out.println("field:" + field);
+                        System.out.println("设置field 000"+field.isAnnotationPresent(Autowired.class));
+                        if (field.isAnnotationPresent(Autowired.class)) {
+                            System.out.println("设置field 1111"+" "+field.getType().getClass().toString());
+//                            if(field.getType().getClass().equals("class java.lang.Class")){
+                                System.out.println("设置field 2222");
+                                field.set(object, "hello world");
+//                            }
+                        }
+                    }
+                    System.out.println("field over"+((ArraySolution)object).getTestField());
+                    //java 9 不推荐用了
+
+                    beanMap.put(targetClass.getName(), object);
+                    System.out.println(beanMap);
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static Object getBean(String name) {
