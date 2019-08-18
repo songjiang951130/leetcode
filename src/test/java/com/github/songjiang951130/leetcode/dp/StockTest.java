@@ -9,7 +9,17 @@ public class StockTest {
     @Test
     public void maxProfit() {
         Stock stock = new Stock();
-        int[] case1 = {1, 3, 2, 8, 4, 9};
+        int[] case1 = { 1, 3, 2, 8, 4, 9 };
         assertEquals(8, stock.maxProfit(case1, 2));
+    }
+
+    @Test
+    public void maxProfitv2() {
+        Stock stock = new Stock();
+        int[] case1 = { 7, 1, 5, 3, 6, 4 };
+        assertEquals(7, stock.maxProfit(case1));
+
+        int[] case2 = { 1, 2, 3, 4, 5 };
+        assertEquals(4, stock.maxProfit(case2));
     }
 }
