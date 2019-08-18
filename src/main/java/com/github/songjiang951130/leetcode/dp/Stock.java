@@ -31,14 +31,16 @@ public class Stock {
     }
 
     /**
-     * 股票仅能卖出两次 [3,3,5,0,0,3,1,4]，6 在第四天买入 0股票卖出 3，7号1元买入8号4员卖出，最大利润6
+     * 股票仅能卖出两次 [3,3,5,0,0,3,1,4]，6 在第四天买入 0股票卖出 3，7号1元买入8号4员卖出，最大利润6;
      * 
+     * 可以扩展到n次最大利润
+     * 
+     * @link https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii
      * @param prices
      * @return
      */
     public int maxProfitV3(int[] prices) {
         return 0;
-
     }
 
 }
