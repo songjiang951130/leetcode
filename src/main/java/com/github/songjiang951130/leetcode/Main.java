@@ -11,6 +11,10 @@ public class Main {
         int[] nums2 = {2};
         arraySolution.findMedianSortedArrays(nums1, nums2);
         System.out.println(arraySolution.getTestField());
+
+        String str = "1234";
+        System.out.println(str.substring(0, 4));
+        System.out.println(str.substring(0, 3));
     }
 
 }

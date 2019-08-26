@@ -37,6 +37,7 @@ public class Leetcode17 {
         for (char c : map.get(key).toCharArray()) {
             result += c;
             helper(resultList, result, digits, index + 1);
+            //除去已加c
             result = result.substring(0, index);
         }
 
