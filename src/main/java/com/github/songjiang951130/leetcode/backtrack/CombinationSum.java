@@ -24,9 +24,6 @@ public class CombinationSum {
     }
 
     private void backTrace(int[] candidates, int target, List<List<Integer>> result, List<Integer> save, int index) {
-        if (target < 0) {
-            return;
-        }
         if (0 == target) {
             //save 是引用类型，其他调用栈会影响该值
             result.add(new ArrayList<>(save));
@@ -34,6 +31,10 @@ public class CombinationSum {
         }
 
         for (int i = index; i < candidates.length; i++) {
+            //加速 去除不合法的情况
+            if (target - candidates[i] < 0) {
+                continue;
+            }
             save.add(candidates[i]);
             backTrace(candidates, target - candidates[i], result, save, i);
             //新加入的元素移除 继续回溯
