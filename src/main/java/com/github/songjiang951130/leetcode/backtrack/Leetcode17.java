@@ -1,4 +1,4 @@
-package com.github.songjiang951130.leetcode.dfs;
+package com.github.songjiang951130.leetcode.backtrack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,12 +20,12 @@ public class Leetcode17 {
     }
 
     public List<String> letterCombinations(String digits) {
-        List<String> result = new ArrayList<>();
+        List<String> resultList = new ArrayList<>();
         if (digits.equals("")) {
-            return result;
+            return resultList;
         }
-        helper(result, "", digits, 0);
-        return result;
+        helper(resultList, "", digits, 0);
+        return resultList;
     }
 
     public void helper(List<String> resultList, String result, String digits, int index) {
