@@ -41,12 +41,13 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 ### [回溯]
 | leetcode 编号 |问题内容      | 难度|
 |:----------|:-------------|:----|
-| 17 | 数字按钮转字符串| 中等|
+| 17 | 数字按钮的所有字符串| 中等|
+| 784 | 字符串所有大小写的可能| 简单|
 
 
 ##### todo list
 回溯相关题目:
-https://leetcode.com/problems/letter-case-permutation/
+https://leetcode.com/tag/backtracking/
 
 相关查看
 

@@ -24,31 +24,6 @@ public class Leetcode17 {
         if (digits.equals("")) {
             return resultList;
         }
-        helper(resultList, "", digits, 0);
-        return resultList;
-    }
-
-    private void helper(List<String> resultList, String result, String digits, int index) {
-        if (index == digits.length()) {
-            resultList.add(result);
-            return;
-        }
-        int key = Integer.parseInt(digits.charAt(index) + "");
-        for (char c : map.get(key).toCharArray()) {
-            result += c;
-            helper(resultList, result, digits, index + 1);
-            //除去已加c
-            result = result.substring(0, index);
-        }
-
-    }
-
-
-    public List<String> letterCombinations2(String digits) {
-        List<String> resultList = new ArrayList<>();
-        if (digits.equals("")) {
-            return resultList;
-        }
         getIndexValue(digits, 0, "", resultList);
         return resultList;
     }

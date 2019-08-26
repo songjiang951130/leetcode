@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * question_id 784
+ * @link https://leetcode.com/problems/letter-case-permutation
  */
 public class LetterCase {
     public List<String> letterCasePermutation(String S) {
