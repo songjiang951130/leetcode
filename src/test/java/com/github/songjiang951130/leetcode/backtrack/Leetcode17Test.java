@@ -28,4 +28,23 @@ public class Leetcode17Test {
         assertEquals(list, leetcode.letterCombinations("23"));
 
     }
+
+    //letterCombinations2
+
+    @Test
+    public void letterCombinationsTest() {
+        leetcode = new Leetcode17();
+
+        assertEquals(new ArrayList<String>(), leetcode.letterCombinations2(""));
+        List<String> list = new ArrayList<>();
+        String[] array = {
+                "ad", "ae", "af",
+                "bd", "be", "bf",
+                "cd", "ce", "cf",
+        };
+        Collections.addAll(list, array);
+
+        assertEquals(list, leetcode.letterCombinations2("23"));
+
+    }
 }
