@@ -29,7 +29,6 @@ public class LetterCase {
         }else if (c <= '9' && c >= '0'){
             backTrack(string,index+1,result+c,resultList);
         }
-
     }
 
 }
