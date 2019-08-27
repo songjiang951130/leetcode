@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -24,5 +25,18 @@ public class CombinationSumTest {
         case1.add(list2);
 
         Assert.assertEquals(case1, combinationSum.combinationSum(new int[]{2, 3, 6, 7}, 7));
+    }
+
+    @Test
+    public void combinationSum2Case1() {
+        CombinationSum combinationSum = new CombinationSum();
+
+        List<List<Integer>> case1 = new ArrayList<>();
+        case1.add(Arrays.asList(1, 1, 6));
+        case1.add(Arrays.asList(1, 2, 5));
+        case1.add(Arrays.asList(1, 7));
+        case1.add(Arrays.asList(2, 6));
+
+        Assert.assertEquals(case1, combinationSum.combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8));
     }
 }

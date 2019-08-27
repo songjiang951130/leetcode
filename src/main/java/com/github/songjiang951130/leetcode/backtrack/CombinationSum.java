@@ -1,6 +1,7 @@
 package com.github.songjiang951130.leetcode.backtrack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CombinationSum {
@@ -37,6 +38,52 @@ public class CombinationSum {
             }
             save.add(candidates[i]);
             backTrace(candidates, target - candidates[i], result, save, i);
+            //新加入的元素移除 继续回溯
+            save.remove(save.size() - 1);
+        }
+    }
+
+    /**
+     * case [10,1,2,7,6,1,5], target = 8,
+     * result:
+     * [
+     * [1, 7],
+     * [1, 2, 5],
+     * [2, 6],
+     * [1, 1, 6]
+     * ]
+     *
+     * @param candidates
+     * @param target
+     * @return
+     */
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(candidates); // 此处排序为了去重 作准备
+        backTrace2(candidates, target, result, new ArrayList<>(), 0);
+        return result;
+
+    }
+
+
+    private void backTrace2(int[] candidates, int target, List<List<Integer>> result, List<Integer> save, int index) {
+        if (0 == target) {
+            //save 是引用类型，其他调用栈会影响该值
+            result.add(new ArrayList<>(save));
+            return;
+        }
+
+        for (int i = index; i < candidates.length; i++) {
+            //去重 此处放前面运行更快
+            if (i > index && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
+            //去除不合法的情况
+            if (target - candidates[i] < 0) {
+                continue;
+            }
+            save.add(candidates[i]);
+            backTrace2(candidates, target - candidates[i], result, save, i + 1);
             //新加入的元素移除 继续回溯
             save.remove(save.size() - 1);
         }
