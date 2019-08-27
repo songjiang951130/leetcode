@@ -74,7 +74,7 @@ public class CombinationSum {
         }
 
         for (int i = index; i < candidates.length; i++) {
-            //去重 此处放前面运行更快
+            //去重 此处放前面运行更快 比如 1,1,7  凑8; 第二个1 直接跳过
             if (i > index && candidates[i] == candidates[i - 1]) {
                 continue;
             }
