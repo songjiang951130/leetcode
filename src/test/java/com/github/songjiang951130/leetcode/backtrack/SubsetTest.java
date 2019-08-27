@@ -42,9 +42,9 @@ public class SubsetTest {
      */
 
     @Test
-    public void subsets2() {
+    public void subsets2Case1() {
         Subset subset = new Subset();
-        
+
         List<List<Integer>> result = new ArrayList<>();
         result.add(new ArrayList<>());
         result.add(Arrays.asList(1));
@@ -54,5 +54,33 @@ public class SubsetTest {
         result.add(Arrays.asList(2, 2));
 
         Assert.assertEquals(result, subset.subsets2(new int[]{1, 2, 2}));
+    }
+
+    @Test
+    public void subsets2Case2() {
+        Subset subset = new Subset();
+
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        result.add(Arrays.asList(2));
+        result.add(Arrays.asList(2, 2));
+        result.add(Arrays.asList(2, 2, 2));
+
+        Assert.assertEquals(result, subset.subsets2(new int[]{2, 2, 2}));
+    }
+
+    @Test
+    public void subsets2Case3() {
+        Subset subset = new Subset();
+
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        result.add(Arrays.asList(1));
+        result.add(Arrays.asList(1, 2));
+        result.add(Arrays.asList(1, 2, 2));
+        result.add(Arrays.asList(2));
+        result.add(Arrays.asList(2, 2));
+
+        Assert.assertEquals(result, subset.subsets2(new int[]{2, 1, 2}));
     }
 }
