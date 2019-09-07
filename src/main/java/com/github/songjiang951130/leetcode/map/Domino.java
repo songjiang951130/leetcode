@@ -5,6 +5,11 @@ import java.util.Map;
 
 public class Domino {
 
+    /**
+     * @link https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/
+     * @param dominoes
+     * @return
+     */
     public int numEquivDominoPairs(int[][] dominoes) {
         if (dominoes == null || dominoes.length == 1) {
             return 0;
