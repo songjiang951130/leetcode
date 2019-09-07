@@ -14,7 +14,7 @@
 maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 
 #### 刷题进度：
-71/1051
+88/1051
 
 ### [深度遍历](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.dfs)
 
@@ -38,9 +38,23 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 |509|斐波那契数列|简单,经典问题|
 |70|爬楼梯|简单|
 
+### [回溯]
+| leetcode 编号 |问题内容      | 难度|
+|:----------|:-------------|:----|
+|  17 | 数字按钮的所有字符串| 中等|
+| 784 | 字符串所有大小写的可能| 简单|
+|  39 | 凑数| 中等|
+|  40 | 凑数2(数字有重复)/| 中等|
+|  78 | 求所有组合|中等，常见问题|
+|  90 | Subsets II/求所有组合（有重复数字）|中等，常见问题|
+|  46 | Permutations/组合 |中等，常见问题|
+|  46 | Permutations ii/组合2 (含有重复数字) |中等，常见问题|
+
+
+
 ##### todo list
 回溯相关题目:
-https://leetcode.com/problems/letter-case-permutation/
+https://leetcode.com/tag/backtracking/
 
 相关查看
 
