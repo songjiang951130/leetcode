@@ -2,6 +2,7 @@ package com.github.songjiang951130.leetcode.backtrack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CombinationSum {
@@ -88,6 +89,55 @@ public class CombinationSum {
             save.remove(save.size() - 1);
         }
     }
+
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<>();
+        backTraceCombine(n, k, 1, result, new ArrayList<>());
+        return result;
+    }
+
+    private void backTraceCombine(int n, int length, int start, List<List<Integer>> result, List<Integer> save) {
+        if (save.size() > length) {
+            return;
+        }
+        if (save.size() == length) {
+            result.add(new ArrayList<>(save));
+            return;
+        }
+
+
+        for (int i = start; i <= n; i++) {
+            save.add(i);
+            backTraceCombine(n, length, i + 1, result, save);
+            save.remove(save.size() - 1);
+        }
+    }
+
+    /**
+     * n= 4 k = 2
+     * 1 2 3 4
+     * 2 3 4
+     * 3 4
+     *
+     * @param n
+     * @param k
+     * @return
+     */
+    public List<List<Integer>> combineFastest(int n, int k) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j <= n; j++) {
+
+                System.out.println(i + " " + j + " ");
+            }
+            System.out.println();
+        }
+
+        return result;
+    }
+
+
 
 
 }
