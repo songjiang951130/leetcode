@@ -14,7 +14,7 @@ public class StockTest {
     }
 
     @Test
-    public void maxProfitv2() {
+    public void maxProfitV2() {
         Stock stock = new Stock();
         int[] case1 = { 7, 1, 5, 3, 6, 4 };
         assertEquals(7, stock.maxProfit(case1));
