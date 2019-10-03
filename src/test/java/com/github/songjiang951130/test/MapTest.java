@@ -6,7 +6,6 @@ import com.github.songjiang951130.leetcode.concurrent.IntSynRunnable;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -14,19 +13,17 @@ public class MapTest {
 
     @Test
     public void testMap() {
-        Hashtable hashtable = new Hashtable();
         /**
-         * jdk 1.8
-         * 初识容量为 16 并且在第一次put会设置
+         * jdk 1.8 初识容量为 16 并且在第一次put会设置
          */
         HashMap<String, String> hashMap = new HashMap<>();
 
         hashMap.put("ss", "vvv");
         String val = hashMap.get("ss");
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<>();
         concurrentHashMap.put("c", "aa");
         concurrentHashMap.get("c");
-        System.out.println("over");
+        System.out.println("over" + val);
     }
 
     @Test

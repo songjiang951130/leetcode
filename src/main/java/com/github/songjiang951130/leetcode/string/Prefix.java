@@ -1,6 +1,5 @@
 package com.github.songjiang951130.leetcode.string;
 
-
 public class Prefix {
     /**
      * @param strs
