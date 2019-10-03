@@ -46,7 +46,7 @@ public class SubString {
                 start++;
             } else {
                 set.add(array[end]);
-                result = Math.max(result, end - start);
+                result = Math.max(result, end - start + 1);
                 end++;
             }
         }
