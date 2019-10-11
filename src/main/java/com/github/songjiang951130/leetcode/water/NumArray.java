@@ -1,7 +1,6 @@
 package com.github.songjiang951130.leetcode.water;
 
 /**
- * @// TODO: 2019-08-09 用线段树进行优化
  */
 public class NumArray {
     private int[] nums;

@@ -10,20 +10,16 @@ import java.io.FileFilter;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
 public class Container {
-    //存储实例化的bean
+    // 存储实例化的bean
     private static Map<String, Object> beanMap = new HashMap<String, Object>();
 
-
     /**
-     * 参考博客：
-     * https://www.cnblogs.com/youdiaodaxue16/p/9813087.html
-     * https://www.cnblogs.com/javaLin/p/8341388.html
-     * spring 源码
+     * 参考博客： https://www.cnblogs.com/youdiaodaxue16/p/9813087.html
+     * https://www.cnblogs.com/javaLin/p/8341388.html spring 源码
      */
     public void scan(Class<?> primarySource) {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
@@ -34,7 +30,7 @@ public class Container {
             Enumeration<URL> resource = classloader.getResources(packagePath);
             while (resource.hasMoreElements()) {
                 URL url = resource.nextElement();
-                //仅处理文件型
+                // 仅处理文件型
                 if (url.getProtocol().equals("file")) {
                     scanPackage(url.getFile(), packageName);
                 }
@@ -44,7 +40,6 @@ public class Container {
         }
 
     }
-
 
     public static void run(Class<?> primarySource) {
         new Container().scan(primarySource);
@@ -70,7 +65,7 @@ public class Container {
 
         for (File file : fileList) {
             if (file.isDirectory()) {
-                //继续扫描文件夹
+                // 继续扫描文件夹
                 path = file.getAbsolutePath().replace(".", "/");
                 scanPackage(path, packageName + "." + file.getName());
             } else {
@@ -89,7 +84,8 @@ public class Container {
             if (targetClass.isAnnotationPresent(Component.class)) {
                 for (Annotation annotation : targetClass.getAnnotations()) {
                     Object object = targetClass.newInstance();
-                    System.out.println("注解 type:" + annotation.annotationType().toString() + " " + targetClass.getName());
+                    System.out
+                            .println("注解 type:" + annotation.annotationType().toString() + " " + targetClass.getName());
                     Field[] fields = targetClass.getDeclaredFields();
 
                     System.out.println("length:" + fields.length);
@@ -100,14 +96,14 @@ public class Container {
                         System.out.println("设置field 000" + field.isAnnotationPresent(Autowired.class));
                         if (field.isAnnotationPresent(Autowired.class)) {
                             System.out.println("设置field 1111" + " " + field.getType().getClass().toString());
-//                            if(field.getType().getClass().equals("class java.lang.Class")){
+                            // if(field.getType().getClass().equals("class java.lang.Class")){
                             System.out.println("设置field 2222");
                             field.set(object, "hello world");
-//                            }
+                            // }
                         }
                     }
                     System.out.println("field over" + ((ArraySolution) object).getTestField());
-                    //java 9 不推荐用了
+                    // java 9 不推荐用了
 
                     beanMap.put(targetClass.getName(), object);
                     System.out.println(beanMap);

@@ -51,11 +51,6 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 |  46 | Permutations ii/组合2 (含有重复数字) |中等，常见问题|
 
 
-
-##### todo list
-回溯相关题目:
-https://leetcode.com/tag/backtracking/
-
 相关查看
 
 [codecov](https://codecov.io/gh/songjiang951130/leetcode)

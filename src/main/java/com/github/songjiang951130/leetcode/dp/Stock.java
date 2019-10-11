@@ -10,7 +10,6 @@ public class Stock {
      */
     public int maxProfit(int[] prices, int fee) {
         int[] profit = new int[prices.length];
-
         return 8;
     }
 
