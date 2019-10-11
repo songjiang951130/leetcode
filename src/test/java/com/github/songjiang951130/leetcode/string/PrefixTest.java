@@ -1,5 +1,7 @@
 package com.github.songjiang951130.leetcode.string;
 
+import com.github.songjiang951130.leetcode.string.Prefix;
+
 import org.junit.Assert;
 import org.junit.Test;
 
