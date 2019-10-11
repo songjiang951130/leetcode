@@ -1,4 +1,4 @@
-package com.github.songjiang951130.leetcode.String;
+package com.github.songjiang951130.leetcode.string;
 
 import org.junit.Assert;
 import org.junit.Test;
