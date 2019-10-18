@@ -2,7 +2,7 @@ package com.github.songjiang951130.leetcode.dp;
 
 import java.util.Arrays;
 
-public class Solution {
+public class ArraySolution {
     //最大连续子数组
     public int maxSubArray(int[] nums) {
         int[] dp = new int[nums.length];
@@ -11,6 +11,23 @@ public class Solution {
         for (int index = 1; index < nums.length; index++) {
             dp[index] = nums[index] + (dp[index - 1] > 0 ? dp[index - 1] : 0);
             max = dp[index] > max ? dp[index] : max;
+        }
+        return max;
+    }
+
+    public int maxSubArrayEasyUnderstand(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int max = nums[0];
+        int sum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (sum < 0) {
+                sum = nums[i];
+            } else {
+                sum += nums[i];
+            }
+            max = Math.max(max, sum);
         }
         return max;
     }
