@@ -15,6 +15,16 @@ public class ArraySolution {
         return max;
     }
 
+    public int maxSubArrayLowMemory(int[] nums) {
+        int max = nums[0];
+        int tmp = nums[0];
+        for (int index = 1; index < nums.length; index++) {
+            tmp = nums[index] + (tmp > 0 ? tmp : 0);
+            max = tmp > max ? tmp : max;
+        }
+        return max;
+    }
+
     public int maxSubArrayEasyUnderstand(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -28,16 +38,6 @@ public class ArraySolution {
                 sum += nums[i];
             }
             max = Math.max(max, sum);
-        }
-        return max;
-    }
-
-    public int maxSubArrayLowMemory(int[] nums) {
-        int max = nums[0];
-        int tmp = nums[0];
-        for (int index = 1; index < nums.length; index++) {
-            tmp = nums[index] + (tmp > 0 ? tmp : 0);
-            max = tmp > max ? tmp : max;
         }
         return max;
     }
@@ -140,65 +140,4 @@ public class ArraySolution {
         }
         return dp[0] > 0;
     }
-
-//    public boolean stoneGameFailed(int[] piles) {
-////        int sum1 = 0;
-////        int sum2 = 0;
-////        int start = 0, end = piles.length - 1;
-////        int times = 0;
-////        while (start <= end) {
-////            //仅剩最后两个数
-////            if (end - start <= 1) {
-////                sum1 += Integer.max(piles[start], piles[end]);
-////                sum2 += Integer.min(piles[start], piles[end]);
-////                System.out.println(sum1 + " " + sum2);
-////                break;
-////            }
-////
-////            if (end - start > 1 && end - start < 4) {
-////                if (piles[start] + piles[end] > piles[start + 1] + piles[end - 1] || piles[start] + piles[end - 1] > piles[start + 1] + piles[end]) {
-////                    sum1 += times % 2 == 0 ? piles[start] : 0;
-////                    sum2 += times % 2 == 1 ? piles[start] : 0;
-////                    start++;
-////                } else {
-////                    sum1 += times % 2 == 0 ? piles[end] : 0;
-////                    sum2 += times % 2 == 1 ? piles[end] : 0;
-////                    end--;
-////                }
-////                if (times % 2 == 1) {
-////                    System.out.println(sum1 + " " + sum2);
-////                }
-////                times++;
-////                continue;
-////            }
-////
-////            if (piles[start + 1] > piles[start]) {
-////
-////            } else if (piles[end - 1] > piles[end]) {
-////
-////            }
-////            if (piles[start] + Integer.max(piles[start + 2], piles[end]) > piles[start + 1] + Integer.max(piles[end - 1], piles[start + 2])) {
-////                sum1 += times % 2 == 0 ? piles[start] : 0;
-////                sum2 += times % 2 == 1 ? piles[start] : 0;
-////                start++;
-////
-////            }// end -1 是较大值
-////            else if (piles[end] + Integer.max(piles[start], piles[end - 2]) > piles[end - 1] + Integer.max(piles[start - 1], piles[end - 2])) {
-////                sum1 += times % 2 == 0 ? piles[end] : 0;
-////                sum2 += times % 2 == 1 ? piles[end] : 0;
-////                end--;
-////            } else {
-////                sum1 += times % 2 == 0 ? piles[end] : 0;
-////                sum2 += times % 2 == 1 ? piles[end] : 0;
-////                end--;
-////            }
-////            if (times % 2 == 1) {
-////                System.out.println(sum1 + " " + sum2);
-////            }
-////            times++;
-////        }
-////        return sum1 > sum2;
-////    }
-
-
 }
