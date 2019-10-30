@@ -31,6 +31,12 @@ public class MockTest {
 
         //following prints "first"
         assertEquals("first", mockedList.get(0));
-        mockedList.get(1);
+        try {
+            mockedList.get(1);
+        } catch (Exception e) {
+            if (e instanceof RuntimeException) {
+                System.out.println("获得预期异常");
+            }
+        }
     }
 }
