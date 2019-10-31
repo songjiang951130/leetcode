@@ -8,7 +8,7 @@ public class HappyNumber {
      * @param n
      * @return boolean
      * @link https://leetcode-cn.com/problems/happy-number/comments/
-     * 思路: 快慢指针解决循环问题
+     * 思路/总结: 快慢指针解决循环问题
      * <p>
      * 额外：
      * 不是快乐数的数称为不快乐数（unhappy number），所有不快乐数的数位平方和计算，最後都会进入
