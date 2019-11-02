@@ -3,9 +3,8 @@ package com.github.songjiang951130.leetcode.dp;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import com.github.songjiang951130.leetcode.dp.Container;
 
-class ContainerTest {
+public class ContainerTest {
     Container container = new Container();
 
     @Test
