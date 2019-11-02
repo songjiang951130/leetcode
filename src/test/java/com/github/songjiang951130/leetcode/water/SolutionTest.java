@@ -14,16 +14,4 @@ public class SolutionTest {
         Assert.assertEquals(4, solution.numEquivDominoPairs(case2));
 
     }
-
-    @Test
-    public void permutation() {
-        String str1 = "abc";
-        String str2 = "def";
-        for (char c1 : str1.toCharArray()) {
-            for (char c2 : str2.toCharArray()) {
-                System.out.println(c1 + " " + c2);
-            }
-        }
-
-    }
 }

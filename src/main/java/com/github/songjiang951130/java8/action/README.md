@@ -14,24 +14,23 @@
 maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 
 #### 刷题进度：
-90/1051
+88/1051
 
-### [深度遍历](/src/main/java/com/github/songjiang951130/leetcode/dfs)
+### [深度遍历](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.dfs)
 
 | leetcode 编号 |问题内容      | 难度  | 
 |:----------|:-------------|:---|
 | 257 |  查找二次树所有子路径 | |
 | 100 |  是否存在跟节点到子节点路径等于给定值   |  |
-| 200 |  岛屿数量  |中等  |
 
 
-### [栈stack](/src/main/java/com/github/songjiang951130/leetcode/stack)
+### [栈stack](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.stack)
 
 | leetcode 编号 |问题内容      | 难度| 
 |:----------|:-------------|:---|
 | 1021 |  去除最外层括号 | |
 
-### [动态规划](/src/main/java/com/github/songjiang951130/leetcode/dp)
+### [动态规划](/com/github/songjiang951130/leetcode/com.github.songjiang951130.leetcode.dp)
 
 | leetcode 编号 |问题内容      | 难度|
 |:----------|:-------------|:----|
@@ -39,7 +38,7 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 |509|斐波那契数列|简单,经典问题|
 |70|爬楼梯|简单|
 
-### [回溯](/src/main/java/com/github/songjiang951130/leetcode/backtrack)
+### [回溯]
 | leetcode 编号 |问题内容      | 难度|
 |:----------|:-------------|:----|
 |  17 | 数字按钮的所有字符串| 中等|
