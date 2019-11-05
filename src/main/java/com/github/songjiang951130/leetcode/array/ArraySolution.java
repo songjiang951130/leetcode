@@ -3,7 +3,6 @@ package com.github.songjiang951130.leetcode.array;
 import com.github.songjiang951130.ioc.core.annotation.Autowired;
 import com.github.songjiang951130.ioc.core.annotation.Component;
 
-@SuppressWarnings("unchecked")
 @Component
 public class ArraySolution {
     @Autowired
