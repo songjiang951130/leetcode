@@ -14,7 +14,11 @@
 maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 
 #### 刷题进度：
-91/1051
+92/1051
+### [双指针](/src/main/java/com/github/songjiang951130/leetcode/pointer2)
+| leetcode 编号 |问题内容      | 难度  | 
+|:----------|:-------------|:---|
+|19|删除倒数第n个节点|中等|
 
 ### [深度遍历](/src/main/java/com/github/songjiang951130/leetcode/dfs)
 
