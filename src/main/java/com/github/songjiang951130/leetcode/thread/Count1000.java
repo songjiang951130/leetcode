@@ -1,8 +1,5 @@
 package com.github.songjiang951130.leetcode.thread;
 
-
-import java.util.Hashtable;
-
 public class Count1000 implements Runnable {
     private IntTest test;
 

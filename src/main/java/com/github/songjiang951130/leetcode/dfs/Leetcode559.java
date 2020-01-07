@@ -1,8 +1,5 @@
 package com.github.songjiang951130.leetcode.dfs;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Leetcode559 {
     /**
      * @link https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
@@ -29,6 +26,5 @@ public class Leetcode559 {
         }
         return max;
     }
-
 
 }
