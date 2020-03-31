@@ -44,8 +44,7 @@ public class ArraySort {
             }
             array[e] = array[s];
         }
-        array[e] = temp;
-        System.out.println(e == s);
+        array[e] = temp; // 此时s==e
         return e;
     }
 
