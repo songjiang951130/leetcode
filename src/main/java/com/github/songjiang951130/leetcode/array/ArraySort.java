@@ -9,7 +9,7 @@ public class ArraySort {
         return array;
     }
 
-    public void qSort(int[] array, int s, int e) {
+    private void qSort(int[] array, int s, int e) {
         if (s > e) {
             return;
         }
@@ -22,7 +22,7 @@ public class ArraySort {
 
     /**
      * 已基准点，将数据分为两部分
-     * 
+     *
      * @param array
      * @param s
      * @param e
@@ -52,13 +52,5 @@ public class ArraySort {
         int t = array[s];
         array[s] = array[e];
         array[e] = t;
-    }
-
-    public static void main(String[] args) {
-        int[] array = { 49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22 };
-        array = new int[] { 5, 1, 1, 2, 0, 0 };
-        ArraySort arraySort = new ArraySort();
-        arraySort.sort(array);
-        System.out.println(Arrays.toString(array));
     }
 }
