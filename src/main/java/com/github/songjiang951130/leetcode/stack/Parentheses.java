@@ -1,7 +1,6 @@
 package com.github.songjiang951130.leetcode.stack;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Parentheses {
     /**
@@ -30,5 +29,34 @@ public class Parentheses {
         if (right < left) {
             backTrace(list, val + ")", n, left, right + 1);
         }
+    }
+
+    /**
+     * @param s
+     * @return
+     * @link https://leetcode-cn.com/problems/valid-parentheses/
+     */
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            Character mapChar = map.get(c);
+            if (mapChar == null) {
+                stack.push(c);
+            } else {
+                if (stack.empty() || !mapChar.equals(stack.peek())) {
+                    return false;
+                }
+                stack.pop();
+            }
+        }
+        return stack.empty();
+    }
+
+    public static HashMap<Character, Character> map = new HashMap<>();
+
+    static {
+        map.put(']', '[');
+        map.put(')', '(');
+        map.put('}', '{');
     }
 }

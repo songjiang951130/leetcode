@@ -15,8 +15,8 @@ public class IntRunnable implements Runnable {
     public void run() {
         int result = atomicInteger.getAndIncrement();
         if (atomicInteger.get() == 200) {
-            System.out.println("atomInteger:"+(System.currentTimeMillis() - start) + " " + atomicInteger);
+            System.out.println("atomInteger:" + (System.currentTimeMillis() - start) + " " + atomicInteger);
         }
-//        System.out.println(System.currentTimeMillis() - start + " " + atomicInteger + " " + result);
+        System.out.println(System.currentTimeMillis() - start + " " + atomicInteger + " " + result);
     }
 }

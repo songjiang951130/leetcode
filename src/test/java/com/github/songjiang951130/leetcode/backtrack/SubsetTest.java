@@ -5,10 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class SubsetTest {
 
@@ -25,20 +22,11 @@ public class SubsetTest {
         result.add(Arrays.asList(2, 3));
         result.add(Arrays.asList(3));
 
-        Assert.assertEquals(result, subset.subsets(new int[]{1, 2, 3}));
+        Assert.assertEquals(result, subset.subsets(new int[] { 1, 2, 3 }));
     }
 
     /**
-     * Input: [1,2,2]
-     * Output:
-     * [
-     * [2],
-     * [1],
-     * [1,2,2],
-     * [2,2],
-     * [1,2],
-     * []
-     * ]
+     * Input: [1,2,2] Output: [ [2], [1], [1,2,2], [2,2], [1,2], [] ]
      */
 
     @Test
@@ -53,7 +41,7 @@ public class SubsetTest {
         result.add(Arrays.asList(2));
         result.add(Arrays.asList(2, 2));
 
-        Assert.assertEquals(result, subset.subsets2(new int[]{1, 2, 2}));
+        Assert.assertEquals(result, subset.subsets2(new int[] { 1, 2, 2 }));
     }
 
     @Test
@@ -66,7 +54,7 @@ public class SubsetTest {
         result.add(Arrays.asList(2, 2));
         result.add(Arrays.asList(2, 2, 2));
 
-        Assert.assertEquals(result, subset.subsets2(new int[]{2, 2, 2}));
+        Assert.assertEquals(result, subset.subsets2(new int[] { 2, 2, 2 }));
     }
 
     @Test
@@ -81,6 +69,6 @@ public class SubsetTest {
         result.add(Arrays.asList(2));
         result.add(Arrays.asList(2, 2));
 
-        Assert.assertEquals(result, subset.subsets2(new int[]{2, 1, 2}));
+        Assert.assertEquals(result, subset.subsets2(new int[] { 2, 1, 2 }));
     }
 }

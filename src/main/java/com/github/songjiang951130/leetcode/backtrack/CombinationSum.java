@@ -2,18 +2,12 @@ package com.github.songjiang951130.leetcode.backtrack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class CombinationSum {
     /**
-     * case 1:
-     * Input: candidates = [2,3,6,7], target = 7,
-     * A solution set is:
-     * [
-     * [7],
-     * [2,2,3]
-     * ]
+     * case 1: Input: candidates = [2,3,6,7], target = 7, A solution set is: [ [7],
+     * [2,2,3] ]
      *
      * @param candidates
      * @param target
@@ -27,32 +21,26 @@ public class CombinationSum {
 
     private void backTrace(int[] candidates, int target, List<List<Integer>> result, List<Integer> save, int index) {
         if (0 == target) {
-            //save 是引用类型，其他调用栈会影响该值
+            // save 是引用类型，其他调用栈会影响该值
             result.add(new ArrayList<>(save));
             return;
         }
 
         for (int i = index; i < candidates.length; i++) {
-            //加速 去除不合法的情况
+            // 加速 去除不合法的情况
             if (target - candidates[i] < 0) {
                 continue;
             }
             save.add(candidates[i]);
             backTrace(candidates, target - candidates[i], result, save, i);
-            //新加入的元素移除 继续回溯
+            // 新加入的元素移除 继续回溯
             save.remove(save.size() - 1);
         }
     }
 
     /**
-     * case [10,1,2,7,6,1,5], target = 8,
-     * result:
-     * [
-     * [1, 7],
-     * [1, 2, 5],
-     * [2, 6],
-     * [1, 1, 6]
-     * ]
+     * case [10,1,2,7,6,1,5], target = 8, result: [ [1, 7], [1, 2, 5], [2, 6], [1,
+     * 1, 6] ]
      *
      * @param candidates
      * @param target
@@ -66,26 +54,25 @@ public class CombinationSum {
 
     }
 
-
     private void backTrace2(int[] candidates, int target, List<List<Integer>> result, List<Integer> save, int index) {
         if (0 == target) {
-            //save 是引用类型，其他调用栈会影响该值
+            // save 是引用类型，其他调用栈会影响该值
             result.add(new ArrayList<>(save));
             return;
         }
 
         for (int i = index; i < candidates.length; i++) {
-            //去重 此处放前面运行更快 比如 1,1,7  凑8; 第二个1 直接跳过
+            // 去重 此处放前面运行更快 比如 1,1,7 凑8; 第二个1 直接跳过
             if (i > index && candidates[i] == candidates[i - 1]) {
                 continue;
             }
-            //去除不合法的情况
+            // 去除不合法的情况
             if (target - candidates[i] < 0) {
                 continue;
             }
             save.add(candidates[i]);
             backTrace2(candidates, target - candidates[i], result, save, i + 1);
-            //新加入的元素移除 继续回溯
+            // 新加入的元素移除 继续回溯
             save.remove(save.size() - 1);
         }
     }
@@ -105,7 +92,6 @@ public class CombinationSum {
             return;
         }
 
-
         for (int i = start; i <= n; i++) {
             save.add(i);
             backTraceCombine(n, length, i + 1, result, save);
@@ -114,10 +100,7 @@ public class CombinationSum {
     }
 
     /**
-     * n= 4 k = 2
-     * 1 2 3 4
-     * 2 3 4
-     * 3 4
+     * n= 4 k = 2 1 2 3 4 2 3 4 3 4
      *
      * @param n
      * @param k
@@ -136,8 +119,5 @@ public class CombinationSum {
 
         return result;
     }
-
-
-
 
 }

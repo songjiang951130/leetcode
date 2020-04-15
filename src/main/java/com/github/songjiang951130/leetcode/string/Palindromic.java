@@ -23,17 +23,12 @@ public class Palindromic {
         if (num < 0) {
             return false;
         }
-        int len = (num + "").length();
         int reverseNum = 0;
 
         while (num > reverseNum) {
             reverseNum = reverseNum * 10 + num % 10;
             num /= 10;
         }
-        //121
-        //        num  reveseNum
-        // 第一层：12       1
-        //        1       12
         return reverseNum == num || reverseNum / 10 == num;
     }
 }

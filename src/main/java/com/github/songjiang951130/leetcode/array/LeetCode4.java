@@ -14,7 +14,7 @@ public class LeetCode4 {
         boolean isEven = (nums1.length + nums2.length) % 2 == 0;
         int len = isEven ? nums1.length + nums2.length + 1 : nums1.length + nums2.length - 1;
         int i = 0, j = 0, index = 0;
-        while (index < len  / 2) {
+        while (index < len / 2) {
             if (nums1[i] < nums2[j]) {
                 //last one
                 if (i == nums1.length - 1) {
@@ -38,5 +38,15 @@ public class LeetCode4 {
     private double median(int[] nums) {
         boolean isEven = nums.length % 2 == 0;
         return isEven ? (nums[nums.length / 2] + nums[nums.length / 2 - 1]) / 2.0 : nums[nums.length / 2];
+    }
+
+    public int findNumbers(int[] nums) {
+        int c = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (((nums[i] + "").length() & 1) == 0) {
+                c++;
+            }
+        }
+        return c;
     }
 }

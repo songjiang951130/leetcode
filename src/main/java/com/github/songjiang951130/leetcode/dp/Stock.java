@@ -2,18 +2,6 @@ package com.github.songjiang951130.leetcode.dp;
 
 public class Stock {
     /**
-     * case 1 = [1, 3, 2, 8, 4, 9]
-     * 
-     * @param prices int[]
-     * @param fee    int
-     * @return
-     */
-    public int maxProfit(int[] prices, int fee) {
-        int[] profit = new int[prices.length];
-        return 8;
-    }
-
-    /**
      * 股票可以多次卖出 测试用例：[7,1,5,3,6,4] 7;[1,2,3,4,5] 5
      * 
      * @link https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/

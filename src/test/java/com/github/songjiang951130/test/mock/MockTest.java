@@ -7,29 +7,26 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+@SuppressWarnings("unchecked")
 public class MockTest {
-
     @Test
     public void test() {
-        List mockedList = mock(List.class);
-        //using mock object
+        List<String> mockedList = mock(List.class);
+        // using mock object
         mockedList.add("one");
         mockedList.clear();
-
-        //verification
         verify(mockedList).add("one");
         verify(mockedList).clear();
     }
 
     @Test
     public void sub() {
-        List mockedList = mock(List.class);
+        List<String> mockedList = mock(List.class);
 
-        //stubbing
+        // stubbing
         when(mockedList.get(0)).thenReturn("first");
         when(mockedList.get(1)).thenThrow(new RuntimeException());
 
-        //following prints "first"
         assertEquals("first", mockedList.get(0));
         try {
             mockedList.get(1);

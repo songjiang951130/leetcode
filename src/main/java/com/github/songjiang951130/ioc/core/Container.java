@@ -80,7 +80,7 @@ public class Container {
 
     public void handleClassFile(String name) {
         try {
-            Class targetClass = Class.forName(name);
+            Class<?> targetClass = Class.forName(name);
             if (targetClass.isAnnotationPresent(Component.class)) {
                 for (Annotation annotation : targetClass.getAnnotations()) {
                     Object object = targetClass.newInstance();
