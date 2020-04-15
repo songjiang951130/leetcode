@@ -7,34 +7,22 @@ public class Prefix {
      * @link https://leetcode-cn.com/problems/longest-common-prefix/
      */
     public String longestCommonPrefix(String[] strs) {
-        if (strs == null) {
+        if (strs.length == 0) {
             return "";
         }
-        if (strs.length == 1) {
-            return strs[0];
-        }
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            char c = 0;
-            for (int j = 0; j < strs.length; j++) {
-                if (i >= strs[j].length()) {
-                    i = Integer.MAX_VALUE - 1;
-                    break;
-                }
-                if (j == 0) {
-                    c = strs[j].charAt(i);
-                    continue;
-                }
-                if (c != strs[j].charAt(i)) {
-                    i = Integer.MAX_VALUE - 1;
-                    break;
-                }
-
-                if (c == strs[j].charAt(i) && j == strs.length - 1) {
-                    stringBuilder.append(c);
+        for (int i = 0; i < strs[0].length(); i++) {
+            char c = strs[0].charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                /**
+                 * strs[0].length > strs[j].length || 字符不相等
+                 */
+                if (i == strs[j].length() || c != strs[j].charAt(i)) {
+                    return strs[0].substring(0, i);
                 }
             }
         }
-        return stringBuilder.toString();
+        return strs[0];
     }
+
+
 }
