@@ -10,7 +10,7 @@ public class PrefixTest {
         String[] case1 = {"abv", "abd", "abv",};
         Assert.assertEquals("ab", prefix.longestCommonPrefix(case1));
         String[] case2 = {"aa", "a"};
-        Assert.assertEquals("", prefix.longestCommonPrefix(case2));
+        Assert.assertEquals("a", prefix.longestCommonPrefix(case2));
         String[] case3 = {"a",};
         Assert.assertEquals("a", prefix.longestCommonPrefix(case3));
 
