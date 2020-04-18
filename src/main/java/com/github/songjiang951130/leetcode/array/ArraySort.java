@@ -24,28 +24,30 @@ public class ArraySort {
      * 已基准点，将数据分为两部分
      *
      * @param array
-     * @param s
-     * @param e
+     * @param start
+     * @param end
      * @return 返回基准点的下标
      */
-    private int partion(int[] array, int s, int e) {
+    private int partion(int[] array, int start, int end) {
         // 选择第一个为基准点
-        int temp = array[s];
-        while (s < e) {
-            // 找到右边第一个小于tmp的下标
-            while (s < e && temp <= array[e]) {
-                e--;
+        int temp = array[start];
+        while (start < end) {
+            /**
+             * 跳过所有大于基准点的值
+             */
+            while (start < end && array[end] >= temp) {
+                end--;
             }
             // 此时小于这个值和基准点位置互换
-            array[s] = array[e];
+            array[start] = array[end];
             // 此时左侧开始查找
-            while (s < e && temp >= array[s]) {
-                s++;
+            while (start < end && temp >= array[start]) {
+                start++;
             }
-            array[e] = array[s];
+            array[end] = array[start];
         }
-        array[e] = temp; // 此时s==e
-        return e;
+        array[end] = temp; // 此时s==e
+        return end;
     }
 
     private void swap(int[] array, int s, int e) {
