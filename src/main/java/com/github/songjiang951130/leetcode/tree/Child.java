@@ -16,10 +16,10 @@ public class Child {
      * @return
      */
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-        if (B == null) {
+        if (A == null || B == null) {
             return false;
         }
-        return helper(A, B) || helper(A.left, B) || helper(A.right, B);
+        return helper(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
     }
 
     public boolean helper(TreeNode A, TreeNode B) {
@@ -29,6 +29,6 @@ public class Child {
         if (A == null) {
             return false;
         }
-        return A.val == B.val ? helper(A.left, B.left) && helper(A.right, B.right) : false;
+        return A.val == B.val && helper(A.left, B.left) && helper(A.right, B.right);
     }
 }
