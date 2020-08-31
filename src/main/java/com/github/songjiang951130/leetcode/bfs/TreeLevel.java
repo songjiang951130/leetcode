@@ -16,11 +16,11 @@ public class TreeLevel {
         if (root == null) {
             return result;
         }
-        //创建一个队列，用于存储当前节点的所有相邻节点
-        Queue<TreeNode> queue = new LinkedList();
+        // 创建一个队列，用于存储当前节点的所有相邻节点
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            //get current level size
+            // get current level size
             int size = queue.size();
             List<Integer> list = new ArrayList<>(size);
             for (int i = 0; i < size; i++) {
@@ -39,18 +39,18 @@ public class TreeLevel {
         return result;
     }
 
-    //zigzagLevelOrder
+    // zigzagLevelOrder
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
-        //创建一个队列，用于存储当前节点的所有相邻节点
+        // 创建一个队列，用于存储当前节点的所有相邻节点
         Deque<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         int index = 0;
         while (!queue.isEmpty()) {
-            //get current level size
+            // get current level size
             int size = queue.size();
             List<Integer> list = new ArrayList<>(size);
             for (int i = 0; i < size; i++) {
@@ -63,7 +63,7 @@ public class TreeLevel {
                     if (node.right != null) {
                         queue.offer(node.right);
                     }
-                }else {
+                } else {
                     TreeNode node = queue.pollLast();
                     list.add(node.val);
                     if (node.right != null) {

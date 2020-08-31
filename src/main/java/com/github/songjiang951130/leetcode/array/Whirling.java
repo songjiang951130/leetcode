@@ -1,7 +1,5 @@
 package com.github.songjiang951130.leetcode.array;
 
-import java.util.Arrays;
-
 public class Whirling {
     public void rotate(int[] nums, int k) {
         if (k == 0) {
@@ -9,11 +7,8 @@ public class Whirling {
         }
         k = k % nums.length;
         reverse(nums, 0, nums.length - k - 1);
-//        System.out.println(Arrays.toString(nums));
         reverse(nums, nums.length - k, nums.length - 1);
-//        System.out.println(Arrays.toString(nums));
         reverse(nums, 0, nums.length - 1);
-//        System.out.println(Arrays.toString(nums));
     }
 
     public void reverse(int[] array, int start, int end) {

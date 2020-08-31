@@ -37,42 +37,4 @@ class Solution {
         return sb.toString();
 
     }
-
-
-//    public String reformat(String s) {
-//        if (!check(s)) {
-//            return "";
-//        }
-//        StringBuilder stringBuilder = new StringBuilder();
-//        int n = 0;
-//        int c = 0;
-//        while (n < s.length() && c < s.length()) {
-//            while (n < s.length() && s.charAt(n) >= 'a' && s.charAt(n) <= 'z') {
-//                n++;
-//            }
-//            stringBuilder.append(s.charAt(n));
-//            n++;
-//            if (c < s.length() && s.charAt(c) >= '0' && s.charAt(c) <= '9') {
-//                c++;
-//            }
-//            stringBuilder.append(s.charAt(c));
-//            c++;
-//        }
-//        return stringBuilder.toString();
-//
-//    }
-
-    private boolean check(String s) {
-        int n = 0;
-        int c = 0;
-        for (char ch : s.toCharArray()) {
-            if (ch >= '0' && ch <= '9') {
-                n++;
-            }
-            if (ch >= 'a' && ch <= 'z') {
-                c++;
-            }
-        }
-        return Math.abs(c - n) == 1;
-    }
 }

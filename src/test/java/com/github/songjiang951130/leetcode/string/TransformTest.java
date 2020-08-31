@@ -3,8 +3,6 @@ package com.github.songjiang951130.leetcode.string;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class TransformTest {
     Transform transform = new Transform();
 

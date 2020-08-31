@@ -49,10 +49,4 @@ public class ArraySort {
         array[end] = temp; // 此时s==e
         return end;
     }
-
-    private void swap(int[] array, int s, int e) {
-        int t = array[s];
-        array[s] = array[e];
-        array[e] = t;
-    }
 }
