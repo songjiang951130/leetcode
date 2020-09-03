@@ -5,3 +5,4 @@ target/
 .classpath
 leetcode.iml
 .sts4-cache/
+*.DS_Store
