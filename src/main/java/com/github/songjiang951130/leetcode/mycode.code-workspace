@@ -1,0 +1,15 @@
+{
+    "folders": [
+		{
+			"path": "../../../../../../../../stock_helper"
+		},
+		{
+			"path": "../../../../../../.."
+		}
+	],
+    "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home",
+        "java.import.maven.enabled": true
+    }
+}
