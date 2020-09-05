@@ -17,7 +17,6 @@ public class Permutations {
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-//            System.out.println(save + " " + nums[i]);
             if (save.contains(nums[i])) {
                 continue;
             }
