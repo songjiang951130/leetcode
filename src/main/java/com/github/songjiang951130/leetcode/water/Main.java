@@ -1,6 +1,6 @@
 package com.github.songjiang951130.leetcode.water;
 
-import com.github.songjiang951130.leetcode.database.TreeNode;
+import com.github.songjiang951130.leetcode.base.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

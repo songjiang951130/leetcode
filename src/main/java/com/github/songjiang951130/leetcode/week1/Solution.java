@@ -1,6 +1,10 @@
 package com.github.songjiang951130.leetcode.week1;
 
+import com.github.songjiang951130.leetcode.base.TreeNode;
+
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 class Solution {
     public String reformat(String s) {
@@ -38,41 +42,43 @@ class Solution {
 
     }
 
-
-//    public String reformat(String s) {
-//        if (!check(s)) {
-//            return "";
-//        }
-//        StringBuilder stringBuilder = new StringBuilder();
-//        int n = 0;
-//        int c = 0;
-//        while (n < s.length() && c < s.length()) {
-//            while (n < s.length() && s.charAt(n) >= 'a' && s.charAt(n) <= 'z') {
-//                n++;
-//            }
-//            stringBuilder.append(s.charAt(n));
-//            n++;
-//            if (c < s.length() && s.charAt(c) >= '0' && s.charAt(c) <= '9') {
-//                c++;
-//            }
-//            stringBuilder.append(s.charAt(c));
-//            c++;
-//        }
-//        return stringBuilder.toString();
-//
-//    }
-
-    private boolean check(String s) {
-        int n = 0;
-        int c = 0;
-        for (char ch : s.toCharArray()) {
-            if (ch >= '0' && ch <= '9') {
-                n++;
-            }
-            if (ch >= 'a' && ch <= 'z') {
-                c++;
+    /**
+     * 二叉树层序遍历倒着打印
+     * @todo 方便的树构建方式
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        LinkedList<List<Integer>> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> temp = new LinkedList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                temp.add(node.val);
+                if(node.left != null){
+                    queue.add(node.left);
+                }
+                if(node.right != null) {
+                    queue.add(node.right);
+                }
+                if (i == size - 1) {
+                    res.addFirst(temp);
+                }
             }
         }
-        return Math.abs(c - n) == 1;
+        return res;
     }
+
+    /**
+     * java.lang.NullPointerException
+     *   at line 23, Solution.levelOrderBottom
+     *   at line 57, __DriverSolution__.__helper__
+     *   at line 85, __Driver__.main
+     */
 }

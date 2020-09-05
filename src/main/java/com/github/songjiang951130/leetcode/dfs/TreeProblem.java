@@ -1,6 +1,6 @@
 package com.github.songjiang951130.leetcode.dfs;
 
-import com.github.songjiang951130.leetcode.database.TreeNode;
+import com.github.songjiang951130.leetcode.base.TreeNode;
 
 public class TreeProblem {
     public int maxDepth(TreeNode root) {
