@@ -7,7 +7,6 @@ package com.github.songjiang951130.leetcode;
 
 import java.util.List;
 
-// @lc code=start
 class Solution {
     /**
      * case1: [-1, 0, 1, 2, -1, -4] result: [ [-1, 0, 1], [-1, -1, 2] ]
@@ -24,4 +23,3 @@ class Solution {
         return null;
     }
 }
-// @lc code=end

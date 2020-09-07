@@ -1,4 +1,4 @@
-package com.github.songjiang951130.leetcode;
+package com.github.songjiang951130.leetcode.tree;
 
 import com.github.songjiang951130.leetcode.database.TreeNode;
 

@@ -1,10 +1,26 @@
 package com.github.songjiang951130.leetcode.pointer2;
 
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof ListNode) {
+            ListNode node = (ListNode) obj;
+            return this.val == node.val;
+        }
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "val=" + val +
+                '}';
     }
 }
