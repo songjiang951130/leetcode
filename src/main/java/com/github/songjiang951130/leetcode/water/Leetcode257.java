@@ -19,7 +19,8 @@ package com.github.songjiang951130.leetcode.water;//给定一个二叉树，返�
 // 👍 344 👎 0
 
 
-import com.github.songjiang951130.leetcode.database.TreeNode;
+
+import com.github.songjiang951130.leetcode.base.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;
