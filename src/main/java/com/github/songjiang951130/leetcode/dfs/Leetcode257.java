@@ -3,7 +3,7 @@ package com.github.songjiang951130.leetcode.dfs;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.songjiang951130.leetcode.database.TreeNode;
+import com.github.songjiang951130.leetcode.base.TreeNode;
 
 /**
  * @link https://leetcode.com/problems/binary-tree-paths

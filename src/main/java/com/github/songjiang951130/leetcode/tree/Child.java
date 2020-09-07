@@ -1,6 +1,6 @@
 package com.github.songjiang951130.leetcode.tree;
 
-import com.github.songjiang951130.leetcode.database.TreeNode;
+import com.github.songjiang951130.leetcode.base.TreeNode;
 
 /**
  * 剑指 Offer 26. 树的子结构

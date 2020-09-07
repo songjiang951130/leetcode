@@ -1,7 +1,7 @@
 package com.github.songjiang951130.leetcode.dfs;
 
 
-import com.github.songjiang951130.leetcode.database.TreeNode;
+import com.github.songjiang951130.leetcode.base.TreeNode;
 import org.junit.Assert;
 import org.junit.Test;
 import com.github.songjiang951130.leetcode.water.Main;
