@@ -10,8 +10,11 @@ public class WhirlingTest {
 
     @Test
     public void rotate() {
-        int[] case2 = new int[] { 1, 2 };
+        int[] case2 = new int[]{1, 2};
         whirling.rotate(case2, 1);
-        Assert.assertTrue(Arrays.equals(case2, new int[] { 2, 1 }));
+        Assert.assertArrayEquals(new int[]{2, 1}, case2);
+        int[] case3 = new int[]{1};
+        whirling.rotate(case3, 0);
+        Assert.assertArrayEquals(new int[]{1}, case3);
     }
 }

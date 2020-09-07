@@ -13,9 +13,7 @@ public class Whirling {
 
     public void reverse(int[] array, int start, int end) {
         int tempEnd = end;
-        System.out.println("end+start/2:" + ((end + start) / 2));
         for (int s = start; s <= (end + start) / 2; s++) {
-            System.out.println(s + " " + end);
             int t = array[s];
             array[s] = array[tempEnd];
             array[tempEnd] = t;
