@@ -1,9 +1,5 @@
 package com.github.songjiang951130.leetcode.array;
 
-import com.github.songjiang951130.ioc.core.Container;
-import com.github.songjiang951130.ioc.core.annotation.Autowired;
-import com.github.songjiang951130.leetcode.Main;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -11,13 +7,7 @@ import java.util.Arrays;
 import static org.junit.Assert.*;
 
 public class ArraySolutionTest {
-    @Autowired
-    private ArraySolution arraySolution;
-
-    @Before
-    public void autowire() {
-        Container.run(Main.class);
-    }
+    private ArraySolution arraySolution = new ArraySolution();
 
     @Test
     public void findMedianSortedArrays() {

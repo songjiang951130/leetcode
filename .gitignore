@@ -1,7 +1,9 @@
 target/
 .idea/
 .vscode/
+*.code-workspace
 .settings/
 .classpath
 leetcode.iml
 .sts4-cache/
+*.DS_Store

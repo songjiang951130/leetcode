@@ -8,11 +8,10 @@ public class SearchTest {
 
     @Test
     public void search() {
-        Assert.assertEquals(5, search.search(new int[]{6, 7, 1, 2, 3, 4, 5}, 4));
+        Assert.assertEquals(5, search.search(new int[] { 6, 7, 1, 2, 3, 4, 5 }, 4));
         /**
-         * [4,5,6,7,0,1,2]
-         * 0
+         * [4,5,6,7,0,1,2] 0
          */
-        Assert.assertEquals(0, search.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 4));
+        Assert.assertEquals(0, search.search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 4));
     }
 }

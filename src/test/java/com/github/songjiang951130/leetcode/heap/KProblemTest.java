@@ -11,4 +11,9 @@ public class KProblemTest {
         Assert.assertEquals(5, kProblem.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
         Assert.assertEquals(4, kProblem.findKthLargest(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4));
     }
+
+    @Test
+    public void topKFrequent() {
+        Assert.assertArrayEquals(new int[]{1, 2}, kProblem.topKFrequent(new int[]{1, 1, 1, 2, 2, 3, 2}, 2));
+    }
 }

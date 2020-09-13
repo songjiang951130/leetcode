@@ -1,4 +1,4 @@
-package com.github.songjiang951130.leetcode.database;
+package com.github.songjiang951130.leetcode.base;
 
 public class TreeNode {
     public int val;
