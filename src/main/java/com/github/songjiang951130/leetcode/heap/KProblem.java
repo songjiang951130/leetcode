@@ -1,6 +1,5 @@
 package com.github.songjiang951130.leetcode.heap;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**

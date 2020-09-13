@@ -3,10 +3,6 @@ package com.github.songjiang951130.leetcode.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-
-import static org.junit.Assert.*;
-
 public class ArraySortTest {
     ArraySort arraySort = new ArraySort();
     ArraySortCopy arraySortCopy = new ArraySortCopy();
