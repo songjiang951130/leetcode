@@ -1,7 +1,10 @@
 package com.github.songjiang951130.leetcode.thread;
 
 public class JoinTest {
-
+    /**
+     * 测试 join 让线程顺序执行
+     * @param args
+     */
     public static void main(String[] args) {
         Thread threadA = new Thread(new WorkThread(),"threadA");
         Thread threadB = new Thread(new WorkThread(),"threadB");
