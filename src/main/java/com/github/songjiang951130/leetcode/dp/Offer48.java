@@ -52,4 +52,21 @@ public class Offer48 {
         return res;
     }
 
+    public int lengthOfLongestSubstringV3(String s) {
+        int res = 0;
+        char[] chars = s.toCharArray();
+        int[] charMap = new int[128];
+        int start = 0;
+        for (int i = 0; i < chars.length; i++) {
+            char c = chars[i];
+            while (charMap[c] > 0) {
+                charMap[chars[start]]--;
+                start++;
+            }
+            charMap[c]++;
+            res = Math.max(res, i - start + 1);
+        }
+        return res;
+    }
+
 }
