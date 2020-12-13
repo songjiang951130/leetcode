@@ -1,4 +1,4 @@
-package com.github.songjiang951130.leetcode.offer;
+package com.github.songjiang951130.leetcode.dp;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -37,17 +37,17 @@ public class Offer48 {
      */
     public int lengthOfLongestSubstringV2(String s) {
         int res = 0;
+        char[] chars = s.toCharArray();
         Deque<Character> deque = new ArrayDeque<>();
         int start = 0;
-        for (int i = 0; i < s.length(); ) {
-            char c = s.charAt(i);
+        for (int i = 0; i < chars.length; i++) {
+            char c = chars[i];
             while (deque.contains(c)) {
                 deque.poll();
                 start++;
             }
             deque.offer(c);
             res = Math.max(res, i - start + 1);
-            i++;
         }
         return res;
     }

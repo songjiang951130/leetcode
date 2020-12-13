@@ -3,12 +3,12 @@ package com.github.songjiang951130.leetcode.dp;
 public class UniqPath {
 
     /**
-     * 动态规划
+     *
      *
      * @param m
      * @param n
      * @return
-     * @link https://leetcode.com/problems/unique-paths
+     * @link https://leetcode-cn.com/problems/unique-paths/
      */
     public int uniquePaths(int m, int n) {
         int[][] array = new int[m][n];

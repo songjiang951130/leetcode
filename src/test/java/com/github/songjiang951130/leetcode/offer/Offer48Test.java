@@ -1,5 +1,6 @@
 package com.github.songjiang951130.leetcode.offer;
 
+import com.github.songjiang951130.leetcode.dp.Offer48;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
