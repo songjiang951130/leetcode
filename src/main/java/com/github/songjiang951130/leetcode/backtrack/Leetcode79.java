@@ -40,20 +40,4 @@ public class Leetcode79 {
         visited[r][c] = false;
         return result;
     }
-
-    public static void main(String[] args) {
-        Leetcode79 leetcode79 = new Leetcode79();
-        /**
-         * 给定 word = "ABCCED", 返回 true 给定 word = "SEE", 返回 true 给定 word = "ABCB", 返回
-         * false
-         */
-        char[][] board = new char[3][4];
-        board[0] = new char[] { 'A', 'B', 'C', 'E' };
-        board[1] = new char[] { 'S', 'F', 'C', 'S' };
-        board[2] = new char[] { 'A', 'D', 'E', 'E' };
-        String word = "ABCCED";
-        boolean res = leetcode79.exist(board, word);
-        System.out.println(res);
-    }
-
 }

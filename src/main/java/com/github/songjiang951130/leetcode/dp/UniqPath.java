@@ -57,16 +57,4 @@ public class UniqPath {
         }
         return array[obstacleGrid.length - 1][obstacleGrid[0].length - 1];
     }
-
-    /**
-     * 从 1 走到 2 ，-1 代表障碍
-     * exmaple：
-     * 1 0 0  0
-     * 0,0,0, 0
-     * 0,0,2,-1
-     * @todo 提示回溯法解决
-     */
-    public int uniquePathsIII(int[][] grid) {
-        return 0;
-    }
 }
