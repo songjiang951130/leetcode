@@ -24,7 +24,6 @@ public class PermutationsTest {
 
     @Test
     public void permuteCase2() {
-        Permutations permutation = new Permutations();
         List<List<Integer>> result = new ArrayList<>();
         result.add(Arrays.asList(1, 2, 4));
         result.add(Arrays.asList(1, 4, 2));

@@ -1,5 +1,8 @@
 package com.github.songjiang951130.leetcode.week1;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import com.github.songjiang951130.leetcode.base.TreeNode;
 
 import java.util.*;
@@ -38,6 +41,27 @@ class Solution {
         }
         return sb.toString();
 
+    }
+
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
+        dfs(res, temp, 0, 0, target, candidates);
+        return res;
+    }
+
+    public void dfs(List<List<Integer>> res, List<Integer> temp, int start, int sum, int target, int[] candidates) {
+        if (sum > target) {
+            return;
+        }
+        if (sum == target) {
+            res.add(new ArrayList<>(temp));
+        }
+        for (int i = start; i < candidates.length; i++) {
+            temp.add(candidates[i]);
+            dfs(res, temp, i, sum + candidates[i], target, candidates);
+            temp.remove(temp.size() - 1);
+        }
     }
 
     /**
@@ -109,7 +133,6 @@ class Solution {
         }
         return new String(array);
     }
-
 
     /**
      * 需要考虑超出范围,对结果进行缓存
