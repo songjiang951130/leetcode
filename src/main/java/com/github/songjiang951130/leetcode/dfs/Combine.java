@@ -5,11 +5,17 @@ import java.util.List;
 
 /**
  * Combine leetcode 77 medium
- * 
+ * <p>
  * 组合问题
  */
 public class Combine {
-
+    /**
+     * 求 1-n 的自然数，选取k个数的所有组合
+     *
+     * @param n
+     * @param k
+     * @return
+     */
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         if (n <= 0 || k <= 0 || n < k) {
@@ -22,7 +28,7 @@ public class Combine {
     /**
      * 如何解决数据重复的问题 比如 22，33，44
      */
-    public void dfs(List<List<Integer>> result, List<Integer> list, int n, int k, int start) {
+    private void dfs(List<List<Integer>> result, List<Integer> list, int n, int k, int start) {
         if (list.size() == k) {
             result.add(new ArrayList<>(list));
             return;
