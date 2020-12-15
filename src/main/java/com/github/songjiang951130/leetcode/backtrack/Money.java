@@ -11,12 +11,11 @@ public class Money {
         return result;
     }
 
-    public void backTrace(int[] array, int target, int index, List<List<Integer>> result, List<Integer> save) {
+    private void backTrace(int[] array, int target, int index, List<List<Integer>> result, List<Integer> save) {
         if (target == 0) {
             result.add(new ArrayList<>(save));
             return;
         }
-        System.out.println("target:" + target + " index:" + index);
         for (int i = index; i < array.length; i++) {
             if (target - array[i] < 0) {
                 continue;
@@ -31,9 +30,4 @@ public class Money {
         }
     }
 
-    public static void main(String[] args) {
-        Money money = new Money();
-        List<List<Integer>> result = money.handle(new int[]{10, 10, 20, 40, 60, 120}, 100);
-        System.out.println(result);
-    }
 }

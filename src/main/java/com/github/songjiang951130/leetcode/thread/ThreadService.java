@@ -1,5 +1,7 @@
 package com.github.songjiang951130.leetcode.thread;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -10,8 +12,11 @@ public class ThreadService {
         /*
          * fixed 固定的 线程池以固定线程进行并发
          */
-        // ExecutorService executorService = Executors.newFixedThreadPool(3);
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService executorService = new ThreadPoolExecutor(4, 8,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>());
+        ;
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
         // ScheduledExecutorService executorService =
         // Executors.newScheduledThreadPool(2);
         /**
@@ -26,13 +31,16 @@ public class ThreadService {
              */
             // executorService.execute(new CountRunnable(i));
             System.out.println("in:" + System.currentTimeMillis());
-            executorService.execute(new CountRunnable(i));
+//            executorService.execute(new CountRunnable(i));
         }
         executorService.shutdown();
-        // executorService.
+
+
     }
 
     public static void main(String[] args) {
+
+
         ThreadService threadService = new ThreadService();
         threadService.test();
         // threadService.testSchedule();
@@ -48,7 +56,7 @@ public class ThreadService {
         executorService.shutdown();
     }
 
-    public class CountRunnable implements Runnable {
+    public static class CountRunnable implements Runnable {
         long i;
 
         public CountRunnable(long i) {
@@ -59,7 +67,7 @@ public class ThreadService {
         public void run() {
             System.out.println("run:" + System.currentTimeMillis());
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -10,21 +10,13 @@ public class BackTrack {
         return res;
     }
 
-    public void backtrack(List<List<Integer>> res, int[] nums, List<Integer> save) {
-        if (save.size() == nums.length) {
-            res.add(new ArrayList<>(save));
-            return;
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if (save.contains(nums[i])) {
-                continue;
-            }
-            save.add(nums[i]);
-            backtrack(res, nums, save);
-            save.remove(save.size() - 1);
-        }
-    }
-    
+    /**
+     * 数字 1,2,3,,,n,第k个的全排列
+     *
+     * @param n
+     * @param k
+     * @return
+     */
     public String getPermutation(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
         int[] nums = new int[n];
@@ -48,7 +40,7 @@ public class BackTrack {
      * @param save
      * @param visited
      */
-    public void backtrackV2(List<List<Integer>> res, int[] nums, List<Integer> save, boolean[] visited) {
+    private void backtrackV2(List<List<Integer>> res, int[] nums, List<Integer> save, boolean[] visited) {
         if (save.size() == nums.length) {
             res.add(new ArrayList<>(save));
             return;
@@ -74,7 +66,7 @@ public class BackTrack {
      * @param save
      * @param visited
      */
-    public void backtrackV2(List<List<Integer>> res, int[] nums, List<Integer> save, boolean[] visited, int k) {
+    private void backtrackV2(List<List<Integer>> res, int[] nums, List<Integer> save, boolean[] visited, int k) {
         if (k == res.size()) {
             return;
         }
