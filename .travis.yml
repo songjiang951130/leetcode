@@ -10,7 +10,7 @@ after_success:
 jdk:
   - openjdk8
   - openjdk9
-  - openjdk11
+#  - openjdk11 #jacoco 使用-javaagent,java 11 不支持
 
 git:
   depth: false
