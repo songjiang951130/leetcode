@@ -9,9 +9,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41 #代码覆盖
 
 jdk:
-#  - oraclejdk8  无法构建
   - openjdk8
-  - oraclejdk9
   - openjdk9
 #  - openjdk11 #jacoco 使用-javaagent,java 11 不支持
 
