@@ -6,11 +6,12 @@ package com.github.songjiang951130.leetcode;
  */
 
 import java.util.List;
+import java.util.Stack;
 
 class Solution {
     /**
      * case1: [-1, 0, 1, 2, -1, -4] result: [ [-1, 0, 1], [-1, -1, 2] ]
-     * 
+     *
      * @param nums
      * @return
      */
@@ -21,5 +22,26 @@ class Solution {
             }
         }
         return null;
+    }
+
+    public String removeDuplicates(String S) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : S.toCharArray()) {
+            if (stack.isEmpty()) {
+                stack.push(c);
+                continue;
+            }
+            Character p = stack.peek();
+            if (c == p) {
+                stack.pop();
+            } else {
+                stack.push(c);
+            }
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        while (!stack.isEmpty()) {
+            stringBuilder.append(stack.pop());
+        }
+        return stringBuilder.reverse().toString();
     }
 }
