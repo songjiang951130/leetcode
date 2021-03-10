@@ -25,9 +25,13 @@ public class ProxyMain {
     }
 
     public static void showCGLibProxy() {
-        TargetClass userService = new TargetClass();
+        TargetClass targetClass = new TargetClass();
+        System.out.println(targetClass);
         CGLibProxy cgLibProxy = new CGLibProxy();
-        TargetClass proxyObject = (TargetClass) cgLibProxy.getInstance(userService);
+        TargetClass proxyObject = (TargetClass) cgLibProxy.getInstance(targetClass);
+        //com.github.songjiang951130.designpattern.proxy.cglib.TargetClass$$EnhancerByCGLIB$$e1d6dc7f@1edf1c96
+        //展示 类名@hashcode
+        System.out.println(proxyObject);
         int ram = proxyObject.display();
         System.out.println("ram value:" + ram);
     }

@@ -2,7 +2,7 @@ package com.github.songjiang951130.designpattern.proxy.cglib;
 
 import java.util.Random;
 
-public class TargetClass {
+public class TargetClass extends Object {
     public int display() {
         Random ram = new Random(10);
         int res = ram.nextInt(100);
