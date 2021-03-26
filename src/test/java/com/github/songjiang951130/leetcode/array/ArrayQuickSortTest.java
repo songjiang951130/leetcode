@@ -21,9 +21,9 @@ public class ArrayQuickSortTest {
                 arrayHeapSort.sort(arr)
         );
 
-        int[] case2 = new int[]{49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22};
+        int[] case2 = new int[]{7, 6, 7, 11, 5, 12, 3, 0, 1, 13};
         Assert.assertArrayEquals(
-                new int[]{7, 6, 7, 11, 5, 12, 3, 0, 1, 13},
+                new int[]{0, 1, 3, 5, 6, 7, 7, 11, 12, 13},
                 arrayHeapSort.sort(case2)
         );
     }
