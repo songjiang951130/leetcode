@@ -18,6 +18,6 @@ git:
 
 notifications:
   email:
-    - 983804576@qq.com
-  on_success: never  #never
+    - songjiangcq@qq.com
+  on_success: always  #never
   on_failure: always
