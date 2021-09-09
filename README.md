@@ -2,7 +2,7 @@
 
 <p align="center">
 
-[![Build Status](https://travis-ci.com/songjiang951130/leetcode.svg?branch=master)](https://travis-ci.org/songjiang951130/leetcode)
+[![Build Status](https://travis-ci.com/songjiang951130/leetcode.svg?branch=master)](https://travis-ci.com/songjiang951130/leetcode)
 [![Code coverage status](https://img.shields.io/codecov/c/github/songjiang951130/leetcode.svg?style=flat-square)](http://codecov.io/github/songjiang951130/leetcode)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/songjiang951130/leetcode/blob/master/LICENSE)
 </p>
