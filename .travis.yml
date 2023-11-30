@@ -6,7 +6,7 @@ script:
 after_success:
 #  - mvn cobertura:cobertura #此命令 会运行测试 在测试失败时会返回错误码 0，继续生成测试报告
   - mvn jacoco:report
-  - bash <(curl -s https://codecov.io/bash) -t 828e5def-08a3-4829-8214-acc9fec9be41 #代码覆盖
+  - bash <(curl -s https://codecov.io/bash) -t ${{ env.CODECOV-TOKEN.TOKEN }} #代码覆盖
 
 jdk:
   - openjdk8
