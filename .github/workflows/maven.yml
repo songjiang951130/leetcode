@@ -21,3 +21,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: jacoco
+      run: mvn jacoco:report
+    - name: jacoco upload
+      run: bash <(curl -s https://codecov.io/bash) -t ${{ env.CODECOV-TOKEN.TOKEN }}
