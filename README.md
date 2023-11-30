@@ -15,6 +15,12 @@ maven 进行管理，主要引用了 ```junit``` 进行基本的测试用例
 
 #### 刷题进度：
 92/1051
+
+### [数组](/src/main/java/com/github/songjiang951130/leetcode/array)
+| leetcode 编号 |问题内容      | 难度  | 
+|:----------|:-------------|:---|
+
+
 ### [双指针](/src/main/java/com/github/songjiang951130/leetcode/pointer2)
 | leetcode 编号 |问题内容      | 难度  | 
 |:----------|:-------------|:---|
