@@ -2,24 +2,36 @@ package com.github.songjiang951130;
 
 import com.github.songjiang951130.leetcode.base.TreeNode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
+/**
+ * @see
+ */
 public class TreeBuild {
     public TreeNode build(int[] preorder, int[] inorder) {
-        return null;
-//        return help(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
-    }
-
-    private TreeNode help(int[] preorder, int pStart, int pEnd, int[] inorder, int iStart, int iEnd) {
-        if (pStart > pEnd || iStart > iEnd) {
+        if (preorder == null || preorder.length == 0) {
             return null;
         }
-        //前序就是相对的根节点
-        int i = iStart;
-        while (inorder[i] != preorder[pStart]) {
-            i++;
+        TreeNode root = new TreeNode(preorder[0]);
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        stack.push(root);
+        int inorderIndex = 0;
+        for (int i = 1; i < preorder.length; i++) {
+            int preorderVal = preorder[i];
+            TreeNode node = stack.peek();
+            if (node.val != inorder[inorderIndex]) {
+                node.left = new TreeNode(preorderVal);
+                stack.push(node.left);
+            } else {
+                while (!stack.isEmpty() && stack.peek().val == inorder[inorderIndex]) {
+                    node = stack.pop();
+                    inorderIndex++;
+                }
+                node.right = new TreeNode(preorderVal);
+                stack.push(node.right);
+            }
         }
-        TreeNode root = new TreeNode(preorder[pStart]);
-        root.left = help(preorder, pStart + 1, pStart + i - iStart, inorder, iStart, i - 1);
-        root.right = help(preorder, pStart + i - iStart, pEnd, inorder, i + 1, iEnd);
         return root;
     }
 
