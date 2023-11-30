@@ -1,9 +1,7 @@
 codecov:
-  token: 828e5def-08a3-4829-8214-acc9fec9be41
-  branch: master
-  notify:
-    # 要求持续集成成功
-    require_ci_to_pass: yes
-  #拒绝过期报告
-  max_report_age: off
   bot: songjiang
+  branch: master
+  max_report_age: false
+  notify: {songjiangcq@qq.com}
+  require_ci_to_pass: true
+  token: 423eb761-3972-4365-9be7-70fb4c3c3632
