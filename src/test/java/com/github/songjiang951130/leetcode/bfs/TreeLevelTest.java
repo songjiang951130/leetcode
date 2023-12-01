@@ -7,7 +7,7 @@ import org.junit.Assert;
 import java.util.List;
 
 public class TreeLevelTest extends TestCase {
-    private TreeLevel treeLevel = new TreeLevel();
+    private final TreeLevel treeLevel = new TreeLevel();
 
     /**
      * 二叉树层序遍历
