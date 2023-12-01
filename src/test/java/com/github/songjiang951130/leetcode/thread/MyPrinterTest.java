@@ -11,7 +11,7 @@ public class MyPrinterTest {
         new Thread(new MyPrinter.PrintRunnable()).start();
         new Thread(new MyPrinter.PrintRunnable()).start();
         try {
-            Thread.sleep(20000);
+            Thread.sleep(200);
             assertEquals(100, MyPrinter.val);
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -16,21 +16,17 @@ public class Nio {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(111);
         FileChannel inChannel = aFile.getChannel();
         ByteBuffer byteBuffer = ByteBuffer.allocate(48);
         int bytesRead = inChannel.read(byteBuffer);
-        System.out.println(bytesRead);
 
         while (bytesRead != -1) {
-
             System.out.println("Read " + bytesRead);
             byteBuffer.flip();
 
             while (byteBuffer.hasRemaining()) {
                 System.out.print((char) byteBuffer.get());
             }
-
             byteBuffer.clear();
             bytesRead = inChannel.read(byteBuffer);
         }

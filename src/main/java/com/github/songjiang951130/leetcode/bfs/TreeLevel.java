@@ -7,10 +7,15 @@ import java.util.*;
 /**
  * 二叉树层序遍历
  *
- * @link <link>https://leetcode-cn.com/problems/binary-tree-level-order-traversal/</link>
+ * @link <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal">link</a>
  */
 public class TreeLevel {
 
+    /**
+     * 二叉树层序遍历
+     * @param root 头结点
+     * @return 层序遍历结果
+     */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -25,6 +30,7 @@ public class TreeLevel {
             List<Integer> list = new ArrayList<>(size);
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
+                assert node != null;
                 list.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
@@ -39,7 +45,11 @@ public class TreeLevel {
         return result;
     }
 
-    // zigzagLevelOrder
+    /**
+     * 二叉树的锯齿形层序遍历
+     * @param root 头结点
+     * @return 层序遍历结果
+     */
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -65,6 +75,7 @@ public class TreeLevel {
                     }
                 } else {
                     TreeNode node = queue.pollLast();
+                    assert node != null;
                     list.add(node.val);
                     if (node.right != null) {
                         queue.offer(node.right);
@@ -77,7 +88,6 @@ public class TreeLevel {
             result.add(list);
             index++;
         }
-
         return result;
     }
 }
