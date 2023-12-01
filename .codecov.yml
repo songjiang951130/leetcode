@@ -4,4 +4,4 @@ codecov:
   max_report_age: false
   notify: {songjiangcq@qq.com}
   require_ci_to_pass: true
-  token: ${{ env.CODECOV-TOKEN.TOKEN }}
+  token: "423eb761-3972-4365-9be7-70fb4c3c3632"
