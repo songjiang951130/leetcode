@@ -28,4 +28,4 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4-beta
       env:
-        CODECOV_TOKEN: ${{ env.CODECOV-TOKEN.TOKEN }}
+        CODECOV_TOKEN: ${{ vars.CODECOV-TOKEN.TOKEN }}
