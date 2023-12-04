@@ -4,6 +4,8 @@ import com.github.songjiang951130.ioc.core.annotation.Autowired;
 import com.github.songjiang951130.ioc.core.annotation.Component;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 @Component
 public class ArraySolution {
@@ -46,5 +48,33 @@ public class ArraySolution {
         }
         System.out.println(Arrays.toString(result));
         return result;
+    }
+
+
+    /**
+     * @param cardPoints
+     * @param k
+     * @return
+     * @link https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards
+     */
+    public int maxScore(int[] cardPoints, int k) {
+        int len = cardPoints.length - k;
+        int sum = 0;
+        int subSum = 0;
+        for (int i = 0; i < cardPoints.length; i++) {
+            sum += cardPoints[i];
+            if (i < len) {
+                subSum += cardPoints[i];
+            }
+        }
+        if (k == cardPoints.length) {
+            return sum;
+        }
+        int resMin = subSum;
+        for (int i = len; i < cardPoints.length; i++) {
+            subSum = subSum - cardPoints[i - len] + cardPoints[i];
+            resMin = Math.min(subSum, resMin);
+        }
+        return sum - resMin;
     }
 }
