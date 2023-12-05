@@ -42,4 +42,21 @@ public class ArraySolutionTest {
         int result5 = arraySolution.maxScore(new int[]{1, 79, 80, 1, 1, 1, 200, 1}, 3);
         assertEquals(202, result5);
     }
+
+    @Test
+    public void testMaxScoreDepthFirst() {
+        int maxScore = arraySolution.maxScoreByDepthFirst(new int[]{1, 2, 3, 4, 5, 6, 1}, 3);
+        assertEquals(12, maxScore);
+        int result2 = arraySolution.maxScoreByDepthFirst(new int[]{2, 2, 2}, 2);
+        assertEquals(4, result2);
+
+        int result3 = arraySolution.maxScoreByDepthFirst(new int[]{9, 7, 7, 9, 7, 7, 9}, 7);
+        assertEquals(55, result3);
+
+        int result4 = arraySolution.maxScoreByDepthFirst(new int[]{1, 1000, 1}, 1);
+        assertEquals(1, result4);
+
+        int result5 = arraySolution.maxScoreByDepthFirst(new int[]{1, 79, 80, 1, 1, 1, 200, 1}, 3);
+        assertEquals(202, result5);
+    }
 }
