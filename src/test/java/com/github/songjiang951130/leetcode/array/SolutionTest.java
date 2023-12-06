@@ -22,7 +22,6 @@ public class SolutionTest {
         List<List<Integer>> res1 = Lists.newArrayList(
                 Lists.newArrayList(-1, -1, 2),
                 Lists.newArrayList(-1, 0, 1)
-
         );
         Assert.assertEquals(res1,
                 solution.threeSum(new int[]{0, 1, -1, -1, 2, -1, -4}));
@@ -33,6 +32,11 @@ public class SolutionTest {
         );
         Assert.assertEquals(res2,
                 solution.threeSum(new int[]{-2, 0, 1, 1, 2}));
+
+        List<List<Integer>> res3 = Lists.newArrayList();
+        res3.add(Lists.newArrayList(-2, 0, 2));
+        Assert.assertEquals(res3,
+                solution.threeSum(new int[]{-2, 0, 0, 2, 2}));
 
 
     }

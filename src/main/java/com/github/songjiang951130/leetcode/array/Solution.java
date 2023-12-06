@@ -2,7 +2,6 @@ package com.github.songjiang951130.leetcode.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 class Solution {
@@ -33,29 +32,27 @@ class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
             //优化当前值大于0，说明前后之合数已经大于0
             if (nums[i] > 0) {
                 break;
+            }
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
             }
             int s = i + 1;
             int e = nums.length - 1;
             while (s < e) {
                 int sum = nums[i] + nums[s] + nums[e];
                 if (sum == 0) {
-                    List<Integer> el = new ArrayList<>();
-                    el.add(nums[i]);
-                    el.add(nums[s]);
-                    el.add(nums[e]);
-                    if (!res.contains(el)) {
-                        res.add(el);
-                    }
-                    s++;
-                    e--;
+                    res.add(new ArrayList<Integer>(Arrays.asList(nums[i], nums[s], nums[e])));
+                    //跳过element重复数据
+                    while (s < e && nums[s] == nums[++s]) ;
+                    while (s < e && nums[e] == nums[--e]) ;
                 } else if (sum < 0) {
-                    s++;
+                    while (s < e && nums[s] == nums[++s]) ;
                 } else {
-                    e--;
+                    while (s < e && nums[e] == nums[--e]) ;
                 }
             }
         }
