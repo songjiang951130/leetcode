@@ -15,4 +15,9 @@ public class LetterCombinationTest extends TestCase {
         assertEquals(9, strings.size());
         assertEquals(Lists.newArrayList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"), strings);
     }
+
+    public void testGenerateParenthesis() {
+        List<String> strings = letterCombination.generateParenthesis(1);
+        System.out.println(strings);
+    }
 }
