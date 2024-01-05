@@ -58,4 +58,26 @@ class Solution {
         }
         return res;
     }
+
+
+    public int maxAbsoluteSum(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int maxPre = 0;
+        int minPre = 0;
+        for (int i = 0; i < nums.length; i++) {
+            maxPre += nums[i];
+            minPre += nums[i];
+            if (maxPre < 0) {
+                maxPre = 0;
+            }
+            if (minPre > 0) {
+                minPre = 0;
+            }
+            max = Math.max(max, maxPre);
+            min = Math.min(min, minPre);
+        }
+        return Math.max(max, Math.abs(min));
+    }
+
 }
