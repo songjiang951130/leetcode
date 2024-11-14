@@ -44,4 +44,46 @@ public class MapTest {
         }
     }
 
+    @Test
+    public void testString() {
+        String case1 = "race a car";
+        String case2 = "A man, a plan, a canal: Panama";
+        String case3 = "A@";
+        String case4 = "0p";
+        boolean palindrome = isPalindrome(case1);
+        assert !palindrome;
+
+        palindrome = isPalindrome(case2);
+        assert palindrome;
+        palindrome = isPalindrome(case3);
+        assert palindrome;
+
+        palindrome = isPalindrome(case4);
+        assert !palindrome;
+
+    }
+
+
+    public boolean isPalindrome(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.toCharArray().length; i++) {
+            char c = s.toCharArray()[i];
+            if(c<='z'&& c>='a'  || c>='0'&& c<='9'){
+                sb.append(c);
+            }
+
+            if(c<='Z'&& c>='A'){
+                sb.append((char) (c+ 'a'-'A'));
+            }
+        }
+        char[] chars = sb.toString().toCharArray();
+        int mid = chars.length % 2 == 1 ? chars.length / 2 : chars.length / 2 - 1;
+        for (int i = 0; i <= mid; i++) {
+            if (chars[i] != chars[chars.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
