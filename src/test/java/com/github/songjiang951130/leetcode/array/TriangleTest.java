@@ -27,4 +27,26 @@ public class TriangleTest extends TestCase {
         Assert.assertEquals(1, generate.size());
         Assert.assertEquals(integers, generate.get(0));
     }
+
+    public void testGetRows() {
+        List<Integer> generate = triangle.getRows(0);
+        Assert.assertEquals(Lists.newArrayList(1), generate);
+        generate = triangle.getRows(1);
+        Assert.assertEquals(Lists.newArrayList(1, 1), generate);
+        generate = triangle.getRows(2);
+        Assert.assertEquals(Lists.newArrayList(1, 2, 1), generate);
+        generate = triangle.getRows(4);
+        Assert.assertEquals(Lists.newArrayList(1, 4, 6, 4, 1), generate);
+    }
+
+    public void testGetRowsUp() {
+        List<Integer> generate = triangle.getRowsUp(0);
+        Assert.assertEquals(Lists.newArrayList(1), generate);
+        generate = triangle.getRowsUp(1);
+        Assert.assertEquals(Lists.newArrayList(1, 1), generate);
+        generate = triangle.getRowsUp(2);
+        Assert.assertEquals(Lists.newArrayList(1, 2, 1), generate);
+        generate = triangle.getRowsUp(4);
+        Assert.assertEquals(Lists.newArrayList(1, 4, 6, 4, 1), generate);
+    }
 }
