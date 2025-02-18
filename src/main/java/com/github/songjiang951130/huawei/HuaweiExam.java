@@ -61,22 +61,20 @@ public class HuaweiExam {
             int e = sc.nextInt();
             tasks.add(new Task(s, e));
         }
-        int maxTasks = getMaxTasks(tasks);
+        HuaweiExam huaweiExam = new HuaweiExam();
+        int maxTasks = huaweiExam.getMaxTasks(tasks);
         System.out.println(maxTasks);
     }
 
-    public static int getMaxTasks(List<Task> tasks) {
-        Collections.sort(tasks, Comparator.comparingInt(task -> task.startTime));
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        int day = 0, maxTasks = 0;
+    public  int getMaxTasks(List<Task> tasks) {
+        Collections.sort(tasks, Comparator.comparingInt(task -> task.endTime));
+        int maxTasks = 0;
+        int currentTime = Integer.MIN_VALUE;
+
         for (Task task : tasks) {
-            day = Math.max(day, task.startTime);
-            while (!pq.isEmpty() && pq.peek() < day) {
-                pq.poll();
-            }
-            pq.offer(task.endTime);
-            if (pq.size() > maxTasks) {
-                maxTasks = pq.size();
+            if (task.startTime >= currentTime) {
+                maxTasks++;
+                currentTime = task.endTime;
             }
         }
         return maxTasks;

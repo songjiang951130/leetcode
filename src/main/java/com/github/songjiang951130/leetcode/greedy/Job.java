@@ -43,4 +43,31 @@ public class Job {
             return o.c > c ? 1 : -1;
         }
     }
+
+    /**
+     * https://leetcode.cn/problems/gas-station/description/?envType=study-plan-v2&envId=top-interview-150
+     *
+     * @param gas
+     * @param cost
+     * @return
+     */
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        for (int i = 0; i < gas.length; i++) {
+            int start = i;
+            int times = 0;
+            int oil = 0;
+            while (times < gas.length - 1) {
+                int idx = start + times > gas.length - 1 ? start + times - gas.length  : start + times;
+                oil += gas[idx] - cost[idx];
+                if (oil < 0) {
+                    break;
+                }
+                times++;
+            }
+            if (times == gas.length - 1 && oil > 0) {
+                return start;
+            }
+        }
+        return -1;
+    }
 }
