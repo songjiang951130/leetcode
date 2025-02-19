@@ -43,4 +43,40 @@ public class Job {
             return o.c > c ? 1 : -1;
         }
     }
+
+    /**
+     * https://leetcode.cn/problems/gas-station/description/?envType=study-plan-v2&envId=top-interview-150
+     *
+     * @param gas
+     * @param cost
+     * @return
+     */
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        for (int i = 0; i < gas.length; i++) {
+            int start = i;
+            int times = 0;
+            int gasSum = 0;
+            int cosSum = 0;
+            while (times < gas.length) {
+                int idx = (start + times) % gas.length;
+                gasSum += gas[idx];
+                cosSum += cost[idx];
+                if (gasSum < cosSum) {
+                    break;
+                }
+                times++;
+            }
+            if (times == gas.length) {
+                return start;
+            } else {
+                return start + times + 1;
+            }
+        }
+        return -1;
+    }
+
+
+    public int maxDistance(List<List<Integer>> arrays) {
+        return 0;
+    }
 }
