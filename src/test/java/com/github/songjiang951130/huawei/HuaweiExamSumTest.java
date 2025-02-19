@@ -5,8 +5,8 @@ import junit.framework.TestCase;
 
 import java.util.List;
 
-public class HuaweiExam1Test extends TestCase {
-    HuaweiExam1 exam = new HuaweiExam1();
+public class HuaweiExamSumTest extends TestCase {
+    HuaweiExamSum exam = new HuaweiExamSum();
 
     public void testCombinationSum() {
         List<List<Integer>> case1 = exam.combinationSum(new int[]{2, 3, 6, 7}, 7);

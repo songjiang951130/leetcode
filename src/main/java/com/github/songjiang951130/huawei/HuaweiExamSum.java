@@ -2,7 +2,6 @@ package com.github.songjiang951130.huawei;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -48,7 +47,7 @@ import java.util.List;
  * }
  * }
  */
-public class HuaweiExam1 {
+public class HuaweiExamSum {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
