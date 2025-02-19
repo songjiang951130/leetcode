@@ -2,7 +2,7 @@ package com.github.songjiang951130.leetcode.greedy;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class JobTest {
     Job job = new Job();
@@ -25,11 +25,13 @@ public class JobTest {
         //5,1,2,3,4
 
 
-        i = job.canCompleteCircuit(new int[]{5,1,2,3,4}, new int[]{4,4,1,5,1});
+        i = job.canCompleteCircuit(new int[]{5, 1, 2, 3, 4}, new int[]{4, 4, 1, 5, 1});
         assertEquals(4, i);
 
 
-        i = job.canCompleteCircuit(new int[]{4,5,2,6,5,3}, new int[]{3,2,7,3,2,9});
+        i = job.canCompleteCircuit(
+                new int[]{4, 5, 2, 6, 5, 3},
+                new int[]{3, 2, 7, 3, 2, 9});
         assertEquals(-1, i);
     }
 }

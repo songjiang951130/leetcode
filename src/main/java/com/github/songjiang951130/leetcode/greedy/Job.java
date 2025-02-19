@@ -55,19 +55,28 @@ public class Job {
         for (int i = 0; i < gas.length; i++) {
             int start = i;
             int times = 0;
-            int oil = 0;
-            while (times < gas.length - 1) {
-                int idx = start + times > gas.length - 1 ? start + times - gas.length  : start + times;
-                oil += gas[idx] - cost[idx];
-                if (oil < 0) {
+            int gasSum = 0;
+            int cosSum = 0;
+            while (times < gas.length) {
+                int idx = (start + times) % gas.length;
+                gasSum += gas[idx];
+                cosSum += cost[idx];
+                if (gasSum < cosSum) {
                     break;
                 }
                 times++;
             }
-            if (times == gas.length - 1 && oil > 0) {
+            if (times == gas.length) {
                 return start;
+            } else {
+                return start + times + 1;
             }
         }
         return -1;
+    }
+
+
+    public int maxDistance(List<List<Integer>> arrays) {
+        return 0;
     }
 }
